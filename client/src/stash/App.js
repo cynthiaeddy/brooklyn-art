@@ -1,25 +1,24 @@
 import './App.css'
 import { useEffect } from 'react'
-import $ from 'jquery'
 import axios from 'axios'
 function App() {
-  useEffect(() => {
-    $.ajax({
-      url: 'https://www.brooklynmuseum.org/api/v2/archive/collection/',
-      type: 'GET',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('api_key', '')
-      },
-      dataType: 'json',
-      // success: function(data) { console.dir((data.source)); },
+  // useEffect(() => {
+  //   $.ajax({
+  //     url: 'https://www.brooklynmuseum.org/api/v2/archive/collection/',
+  //     type: 'GET',
+  //     beforeSend: function (xhr) {
+  //       xhr.setRequestHeader('api_key', '')
+  //     },
+  //     dataType: 'json',
+  //     // success: function(data) { console.dir((data.source)); },
 
-      // data: $.param({}),
-      success: function (data) {
-        console.log(data)
-      },
-      error: function () {},
-    })
-  }, [])
+  //     // data: $.param({}),
+  //     success: function (data) {
+  //       console.log(data)
+  //     },
+  //     error: function () {},
+  //   })
+  // }, [])
   // useEffect(() => {
   //   axios
   //     .get('https://www.brooklynmuseum.org/api/v2/artist/', {

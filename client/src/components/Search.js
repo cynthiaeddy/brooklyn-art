@@ -12,7 +12,7 @@ const Search = () => {
       {!debouncedSearchTerm ? (
         <div className='Search-input'>
           <div className='Search-word'>
-            <h4>Search: </h4>{' '}
+            <h4>Search: </h4>
             <div className='Search-word-input'>
               <input
                 type='text'
