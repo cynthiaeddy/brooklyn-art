@@ -17,17 +17,21 @@ app.get('/api', async (req, res, next) => {
 
   try {
     const response = await axios.get(
-      //   `https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=${process.env.COOPER_API_TOKEN}&has_images=1&per_page=300&name=landis`
-      // )
-      //api.collection.cooperhewitt.org/rest/?method=cooperhewitt.people.getObjects&access_token=7ade63e51c3bd07d702f97aa93b5559b&person_id=34624697'
-
-      `https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.people.getObjects&access_token=${process.env.COOPER_API_TOKEN}&person=Alexander Calder&role=Artist`
+      // `https://www.brooklynmuseum.org/api/v2/artist?name=warhol`,
+      // `https://www.brooklynmuseum.org/api/v2/collection/?folder=contemporary_art`,
+      `https://www.brooklynmuseum.org/api/v2/artist?name=picasso`,
+      {
+        headers: { api_key: api_key },
+      }
     )
 
     // console.log('in backend, response.data', response.data)
-    https: res.json(response.data)
+    res.json(response.data)
+    // response.data.find(artist => artist.name === 'Ali Ashraf')
+    // console.log(artist)
   } catch (error) {}
 })
+
 app.enable('trust proxy')
 
 app.listen(PORT, () => {
