@@ -1,10 +1,18 @@
 const express = require('express')
 const axios = require('axios')
 require('dotenv').config()
+import { useState, useEffect } from 'react'
 
 const PORT = process.env.PORT || 3005
 
 const app = express()
+
+const newInfo = {
+  city: cityInfo.data.results[0].address_components[0].short_name,
+  weather: weatherInfo.data.currently.summary.toLowerCase(),
+}
+
+setInfo(newInfo)
 
 app.get('/api', async (req, res, next) => {
   console.log('/api')
@@ -25,6 +33,7 @@ app.get('/api', async (req, res, next) => {
         headers: { api_key: api_key },
       }
     )
+    res.json(response)
 
     //   async getFishAndChips() {
     //     const fish = await fetch(this.fishApiUrl).then(response => response.json());
@@ -43,7 +52,6 @@ app.get('/api', async (req, res, next) => {
     //   `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=artistId`
     // )
 
-    res.json(response.data)
     // response.data.find(artist => artist.name === 'Ali Ashraf')
     // console.log(artist)
   } catch (error) {}

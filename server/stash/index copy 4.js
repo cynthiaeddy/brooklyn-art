@@ -10,53 +10,27 @@ app.get(`/api:term`, async (req, res, next) => {
   const api_key = process.env.API_KEY
   const term = req.params.term
 
-  await axios
-    .get(`https://www.brooklynmuseum.org/api/v2/artist?name=${term}`, {
-      headers: { api_key: api_key },
-    })
-    .then(response => {
-      console.log('re', response)
-      const artistId = response.data.data[0].id
-      return axios.get(
-        `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=${artistId}`,
-        {
-          headers: { api_key: api_key },
-        }
-      )
-    })
-    .then(response => {
-      res.json(response.data)
-    })
+  try {
+    const response = await axios.get(
+      `https://www.brooklynmuseum.org/api/v2/artist?name=${term}`,
+      //   // `https://www.brooklynmuseum.org/api/v2/collection/?folder=contemporary_art`,
+      //   // `https://www.brooklynmuseum.org/api/v2/collection/?folder=contemporary_art`,
+      //   // `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=2019`,
+      {
+        headers: { api_key: api_key },
+      }
+    )
+    // const artistId = res.json(response.data.data[0].id)
+    // response = await axios.get(
+    //   `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=${artistId}`,
+    //   {
+    //     headers: { api_key: api_key },
+    //   }
+    // )
+
+    res.json(response.data)
+  } catch (error) {}
 })
-
-// axios.get(...)
-//   .then((response) => {
-//     return axios.get(...); // using response.data
-//   })
-//   .then((response) => {
-//     console.log('Response', response);
-//   });
-//   try {
-//     const response = await axios.get(
-//       `https://www.brooklynmuseum.org/api/v2/artist?name=${term}`,
-//       //   // `https://www.brooklynmuseum.org/api/v2/collection/?folder=contemporary_art`,
-//       //   // `https://www.brooklynmuseum.org/api/v2/collection/?folder=contemporary_art`,
-//       //   // `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=2019`,
-//       {
-//         headers: { api_key: api_key },
-//       }
-//     )
-//     // const artistId = res.json(response.data.data[0].id)
-//     // response = await axios.get(
-//     //   `https://www.brooklynmuseum.org/api/v2/object?has_images=1&artist_id=${artistId}`,
-//     //   {
-//     //     headers: { api_key: api_key },
-//     //   }
-//     // )
-
-//     res.json(response.data)
-//   } catch (error) {}
-// })
 
 // //
 //   try {
