@@ -9,8 +9,15 @@ const SearchResults = props => {
   const [isSearching, setIsSearching] = useState(false)
   console.log('props.term', props.term)
 
+  // useEffect(() => {
+  //   axios.get('api').then(response => {
+  //     console.log(response.data)
+  //   })
+  // }, [])
+
   useEffect(() => {
-    axios.get('api').then(response => {
+    const term = props.term
+    axios.get(`api${term}`).then(response => {
       console.log(response.data)
     })
   }, [])
