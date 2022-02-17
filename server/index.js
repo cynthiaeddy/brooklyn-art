@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3005
 
 const app = express()
 
-app.get(`/api:term`, async (req, res, next) => {
+app.get(`/api/:term`, async (req, res, next) => {
   const api_key = process.env.API_KEY
   const term = req.params.term
 
@@ -25,7 +25,11 @@ app.get(`/api:term`, async (req, res, next) => {
     })
 
     .then(response => {
-      res.json(response.data)
+      console.log(response.data.data[0])
+      const objId = response.data.data.map(obj => {
+        return obj.id
+      })
+      res.json(objId)
     })
 })
 
