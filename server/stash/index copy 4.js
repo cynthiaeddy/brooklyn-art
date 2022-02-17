@@ -23,19 +23,37 @@ app.get(`/api/:term`, async (req, res, next) => {
         }
       )
     })
+
     .then(response => {
-      const promises = response.data.data.map(obj =>
-        axios
-          .get(`https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`, {
-            headers: { api_key: api_key },
+      axios
+        .all(
+          response.data.data.map(obj => {
+            console.log(obj.id)
+            axios.get(
+              `https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`,
+              {
+                headers: { api_key: api_key },
+              }
+            )
           })
-          .then(({ data }) => data)
-      )
-      return Promise.all(promises).then(values => {
-        res.json(values)
-      })
+        )
+        .then(
+          axios.spread(function (...response) {
+            // all requests are now complete
+            console.log('resp', response)
+          })
+        )
     })
 })
+// })
+
+// let linksArr = ['https://jsonplaceholder.typicode.com/posts', 'https://jsonplaceholder.typicode.com/comments'];
+
+// axios.all(linksArr.map(l => axios.get(l)))
+//   .then(axios.spread(function (...res) {
+//     // all requests are now complete
+//     console.log(res);
+//   }));
 
 app.enable('trust proxy')
 

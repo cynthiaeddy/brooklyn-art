@@ -23,17 +23,36 @@ app.get(`/api/:term`, async (req, res, next) => {
         }
       )
     })
+
+    // .then(response => {
+    //   const objee = response.data.data.map(async obj => {
+    //     return await axios.all(
+    //       `https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`,
+    //       {
+    //         headers: { api_key: api_key },
+    //       }
+    //     )
+    //   })
+    //   console.log('objee', objee)
+    //   return objee
+    // })
+    // .then(response => {
+    //   console.log(response)
+    //   res.json(response)
+    // })
     .then(response => {
-      const promises = response.data.data.map(obj =>
-        axios
-          .get(`https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`, {
+      response.data.data.map(async obj => {
+        return await axios.get(
+          `https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`,
+          {
             headers: { api_key: api_key },
-          })
-          .then(({ data }) => data)
-      )
-      return Promise.all(promises).then(values => {
-        res.json(values)
+          }
+        )
       })
+    })
+    .then(response => {
+      console.log(response)
+      // res.json(response)
     })
 })
 

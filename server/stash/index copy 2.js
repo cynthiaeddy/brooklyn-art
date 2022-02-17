@@ -23,19 +23,19 @@ app.get(`/api/:term`, async (req, res, next) => {
         }
       )
     })
+
     .then(response => {
-      const promises = response.data.data.map(obj =>
-        axios
-          .get(`https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`, {
-            headers: { api_key: api_key },
-          })
-          .then(({ data }) => data)
-      )
-      return Promise.all(promises).then(values => {
-        res.json(values)
+      console.log(response.data.data[0])
+      const objId = response.data.data.map(obj => {
+        return obj.id
       })
+      console.log(res.json(objId))
     })
 })
+
+// .get(`https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`, {
+//   headers: { api_key: api_key },
+// })
 
 app.enable('trust proxy')
 
