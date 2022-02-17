@@ -25,15 +25,11 @@ app.get(`/api/:term`, async (req, res, next) => {
     })
 
     .then(response => {
-      response.data.data.map(async obj => {
-        return await axios
-          .get(`https://www.brooklynmuseum.org/api/v2/object/${obj.id}/image`, {
-            headers: { api_key: api_key },
-          })
-          .then(response => {
-            res.json(response.data)
-          })
+      console.log(response.data.data[0])
+      const objId = response.data.data.map(obj => {
+        return obj.id
       })
+      res.json(objId)
     })
 })
 
