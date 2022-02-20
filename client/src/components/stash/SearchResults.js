@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import ArtistCard from './ArtistCard'
-import MasonryGrid from './MasonryGrid'
+import Artist from './Artist'
 const axios = require('axios')
 
 const SearchResults = props => {
@@ -20,7 +19,7 @@ const SearchResults = props => {
     return art.data.map(artData => {
       console.log(artData)
       return (
-        <ArtistCard
+        <Artist
           caption={artData.caption}
           key={artData.id}
           img={artData.largest_derivative_url}
@@ -47,8 +46,11 @@ const SearchResults = props => {
           )
         })
       })} */}
-      <MasonryGrid cards={artist} />
-      {/* {individualArt} */}
+      <MasonryGrid
+        text={this.state.articles.hero_text}
+        cards={this.state.articles.cards}
+      />
+      {individualArt}
     </div>
   )
 }
