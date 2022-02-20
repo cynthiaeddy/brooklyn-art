@@ -4,9 +4,9 @@ import '../stylesheets/MasonryCard.css'
 
 const MasonryGrid = props => {
   const renderCards = () => {
-    console.log('in render cards', props.cards, props.cards.data)
+    // console.log('in render cards', props.cards, props.cards.data)
     const cardSort = props.cards.sort((a, b) => {
-      console.log('a', a.data[0].date_added)
+      // console.log('a', a.data[0].date_added)
       if (a.data[0].date_added > b.data[0].date_added) {
         return -1
       }
@@ -17,8 +17,20 @@ const MasonryGrid = props => {
     })
     return cardSort.map(
       artData =>
-        // console.log(
-        console.log('in cardsort', artData)
+        artData.data.map(art => {
+          // console.log(art)
+          return (
+            <ArtistCard
+              caption={art.caption}
+              key={art.id}
+              img={art.largest_derivative_url}
+              smImg={art.standard_size_url}
+              name={props.term}
+            />
+          )
+        })
+      // console.log(
+      // console.log('in cardsort', artData, cardSort.data, artData.data)
       //   cardSort,
       //   cardSort.data
 
@@ -26,13 +38,6 @@ const MasonryGrid = props => {
       //   // artData.data,
       //   // artData.data[0]
       // )
-      // <ArtistCard
-      //   caption={artData.caption}
-      //   key={artData.id}
-      //   img={artData.largest_derivative_url}
-      //   smImg={artData.standard_size_url}
-      //   name={props.term}
-      // />
     )
   }
 
