@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Artist from './Artist'
 const axios = require('axios')
 
 const SearchResults = props => {
@@ -8,14 +9,46 @@ const SearchResults = props => {
 
   useEffect(() => {
     const term = props.term
-    axios.get(`api${term}`).then(response => {
-      // setArtistId(response.data.data[0].id)
-      console.log(response.data.data)
+    axios.get(`api/${term}`).then(response => {
+      console.log(response, response.data)
+      setArtist(response.data)
     })
-    // getArtist()
-  }, [])
-
-  return <></>
+  }, [props.term])
+  console.log(artist, typeof artist)
+  const individualArt = artist.map(art => {
+    return art.data.map(artData => {
+      console.log(artData)
+      return (
+        <Artist
+          caption={artData.caption}
+          key={artData.id}
+          img={artData.largest_derivative_url}
+          smImg={artData.standard_size_url}
+          name={props.term}
+        />
+      )
+    })
+  })
+  return (
+    <div className='artist-container'>
+      can say hi in search results
+      {/* {artist.map(art => {
+        return art.data.map(artData => {
+          console.log('searchResults', artData)
+          return (
+            <Artist
+              caption={artData.caption}
+              key={artData.id}
+              img={artData.largest_derivative_url}
+              smImg={artData.standard_size_url}
+              name={props.term}
+            />
+          )
+        })
+      })} */}
+      {individualArt}
+    </div>
+  )
 }
 
 export default SearchResults

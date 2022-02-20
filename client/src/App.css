@@ -1,8 +1,19 @@
 * {
   box-sizing: border-box;
 }
-body {
+
+.container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  /* align-items: center; */
 }
+.artist-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .card {
+
+} */
