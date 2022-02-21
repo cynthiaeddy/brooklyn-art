@@ -4,9 +4,7 @@ import '../stylesheets/MasonryCard.css'
 
 const MasonryGrid = props => {
   const renderCards = () => {
-    // console.log('in render cards', props.cards, props.cards.data)
     const cardSort = props.cards.sort((a, b) => {
-      // console.log('a', a.data[0].date_added)
       if (a.data[0].date_added > b.data[0].date_added) {
         return -1
       }
@@ -18,14 +16,14 @@ const MasonryGrid = props => {
 
     return cardSort.map(artData =>
       artData.data.map(art => {
-        console.log(
-          'artdata map',
-          art,
-          art.filename,
-          typeof art.filename,
-          art.filename.split('_'),
-          art.filename.split('_')[0]
-        )
+        // console.log(
+        //   'artdata map',
+        //   art,
+        //   art.filename,
+        //   typeof art.filename,
+        //   art.filename.split('_'),
+        //   art.filename.split('_')[0]
+        // )
         let fileNumber = art.filename.split('_')[0]
         console.log(fileNumber)
         return (
