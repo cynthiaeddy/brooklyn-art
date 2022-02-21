@@ -15,7 +15,26 @@ const MasonryGrid = props => {
       }
       return 0
     })
-
+    // return cardSort.map(artData =>
+    //   // artData.data
+    //   artData.data.filter(
+    //     (art, ind) =>
+    //       // let fileNumber = art.filename.split('_')[0]
+    //       ind ===
+    //       artData.data.findIndex(
+    //         art =>
+    //           art.filename.split('_')[0] === art.filename.split('_')[0] &&
+    //           art.id === art.id
+    //         // <ArtistCard/>
+    //         // <ArtistCard
+    //         //   caption={art.caption}
+    //         //   key={art.id}
+    //         //   img={art.largest_derivative_url}
+    //         //   smImg={art.standard_size_url}
+    //         // />
+    //       )
+    //   )
+    // )
     return cardSort.map(artData =>
       artData.data.map(art => {
         console.log(
@@ -27,7 +46,6 @@ const MasonryGrid = props => {
           art.filename.split('_')[0]
         )
         let fileNumber = art.filename.split('_')[0]
-        console.log(fileNumber)
         return (
           <ArtistCard
             caption={art.caption}
