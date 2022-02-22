@@ -1,12 +1,22 @@
 import './App.css'
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom'
 import Search from './components/Search'
 
 function App() {
-  return (
-    <div className='container'>
-      {/* <Navbar /> */}
+  let routes = (
+    <Route exact path='/'>
       <Search />
-    </div>
+    </Route>
+  )
+  return (
+    <Router>
+      <div className='container'>{routes}</div>
+    </Router>
   )
 }
 
