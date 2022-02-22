@@ -4,15 +4,21 @@ import '../stylesheets/MasonryCard.css'
 
 const MasonryGrid = props => {
   const renderCards = () => {
-    const cardSort = props.cards.sort((a, b) => {
-      if (a.data[0].date_added > b.data[0].date_added) {
-        return -1
-      }
-      if (a.data[0].date_added < b.data[0].date_added) {
-        return 1
-      }
-      return 0
-    })
+    console.log('in rendercards', props)
+    let cardSort
+    if (props.cards === '0 results found') {
+      return <h4>0 results found</h4>
+    } else {
+      cardSort = props.cards.sort((a, b) => {
+        if (a.data[0].date_added > b.data[0].date_added) {
+          return -1
+        }
+        if (a.data[0].date_added < b.data[0].date_added) {
+          return 1
+        }
+        return 0
+      })
+    }
 
     return cardSort.map(artData =>
       artData.data.map(art => {
