@@ -8,14 +8,14 @@ const SearchResults = props => {
   useEffect(() => {
     const term = props.term
     axios.get(`api/${term}`).then(response => {
-      setArtist(response.data)
+      // setArtist(response.data)
       console.log('in search results', response.data)
     })
   }, [props.term])
 
   return (
     <div className='artist-container'>
-      {artist}
+      {/* {artist} */}
       {/* <MasonryGrid cards={artist} /> */}
     </div>
   )
