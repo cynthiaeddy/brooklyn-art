@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import MasonryGrid from './MasonryGrid'
+import { useParams } from 'react-router'
 const axios = require('axios')
 
 const SearchResults = props => {
+  const artistSearch = useParams().artist
+
   const [artist, setArtist] = useState([])
 
   useEffect(() => {
