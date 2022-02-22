@@ -1,37 +1,27 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ArtistCard = props => {
-  const navigate = useNavigate()
-  const art = props.art
-  console.log(props)
-  const [redirect, setRedirect] = useState(false)
+  console.log(
+    'artist card, props',
+    props,
+    'props.caption',
+    props.caption,
+    'props.art',
+    props.art
+  )
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]
   const titleName = captionSplit[1].split(',')[0]
   const titleYear = captionSplit[1].split(',')[1]
-  const shortTitle = captionSplit[1].split('(')[0]
-  console.log(shortTitle)
+  const title = captionSplit[1].split('(')[0]
 
-  // const deleteNameSpace = props.name.replace(/\s+/g, '')
-
-  const doSetRedirect = () => {
-    setRedirect(true)
-  }
-
-  const renderRedirect = () => {
-    // if (redirect) {
-    //   navigate(
-    //     `/${shortTitle.toLowerCase()}/${deleteNameSpace.toLowerCase()}`,
-    //     { art: art }
-    //   )
-    // }
-  }
+  const deleteNameSpace = title.replace(/\s+/g, '')
 
   return (
     <div className='card'>
-      {renderRedirect()}
-      <div onClick={doSetRedirect} style={{ cursor: 'pointer' }}>
+      <Link
+        to={`/${deleteNameSpace.toLowerCase()}`}
+        state={{ from: props.art }}>
         <div className='box'></div>
         <img src={props.img} style={{ width: '300px' }} />
         <h6>{name}</h6>
@@ -39,7 +29,7 @@ const ArtistCard = props => {
           {titleName}
           <span style={{ fontStyle: 'normal' }}>{titleYear}</span>
         </h6>
-      </div>
+      </Link>
     </div>
   )
 }

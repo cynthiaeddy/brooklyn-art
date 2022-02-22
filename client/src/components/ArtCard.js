@@ -1,8 +1,13 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 
 const ArtCard = () => {
-  let { title } = useParams()
+  let title = useParams().title
+  const location = useLocation()
+  const { from } = location.state
+
+  console.log(from)
+
   return <div>Now showing {title}</div>
 }
 

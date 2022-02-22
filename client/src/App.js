@@ -16,7 +16,7 @@ function App() {
 
       <Route path='artist' element={<MasonryGrid />} />
 
-      <Route path='artist/:title' element={<ArtCard />} />
+      <Route path='/:title' element={<ArtCard />} />
     </Routes>
   )
   return (
