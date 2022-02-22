@@ -3,15 +3,21 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
+  Routes,
 } from 'react-router-dom'
 import Search from './components/Search'
+import ArtCard from './components/ArtCard'
+import MasonryGrid from './components/MasonryGrid'
 
 function App() {
   let routes = (
-    <Route exact path='/'>
-      <Search />
-    </Route>
+    <Routes>
+      <Route exact path='/' element={<Search />} />
+
+      <Route path='artist' element={<MasonryGrid />} />
+
+      <Route path='artist/:title' element={<ArtCard />} />
+    </Routes>
   )
   return (
     <Router>
@@ -21,3 +27,5 @@ function App() {
 }
 
 export default App
+{
+}

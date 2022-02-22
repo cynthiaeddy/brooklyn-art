@@ -1,7 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const ArtCard = () => {
-  return <div>ArtCard</div>
+  let { title } = useParams()
+  return <div>Now showing {title}</div>
 }
 
 export default ArtCard
