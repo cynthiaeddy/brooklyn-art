@@ -15,14 +15,6 @@ app.get(`/api/:term`, async (req, res, next) => {
       headers: { api_key: api_key },
     })
     .then(response => {
-      // console.log(
-      //   'hi',
-      //   response.data,
-      //   response.data.data,
-      //   response.data.data.length,
-      //   response.data.data.length ? 'yes' : 'no'
-      // )
-
       if (response.data.data.length) {
         const artistId = response.data.data[0].id
         return axios
@@ -31,7 +23,6 @@ app.get(`/api/:term`, async (req, res, next) => {
             {
               headers: { api_key: api_key },
             }
-            // console.log(response.data)
           )
           .then(response => {
             const promises = response.data.data.map(obj =>
@@ -50,7 +41,6 @@ app.get(`/api/:term`, async (req, res, next) => {
           })
       } else {
         console.log('nope')
-        // const error = 'nope'
         res.json('0 results found')
       }
     })

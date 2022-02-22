@@ -1,10 +1,8 @@
-import React from 'react'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/MasonryCard.css'
 
 const MasonryGrid = props => {
   const renderCards = () => {
-    console.log('in rendercards', props)
     let cardSort
     if (props.cards === '0 results found') {
       return <h4>0 results found</h4>
@@ -22,14 +20,6 @@ const MasonryGrid = props => {
 
     return cardSort.map(artData =>
       artData.data.map(art => {
-        // console.log(
-        //   'artdata map',
-        //   art,
-        //   art.filename,
-        //   typeof art.filename,
-        //   art.filename.split('_'),
-        //   art.filename.split('_')[0]
-        // )
         let fileNumber = art.filename.split('_')[0]
         console.log(fileNumber)
         return (
@@ -43,8 +33,6 @@ const MasonryGrid = props => {
       })
     )
   }
-
-  console.log('in masonry, props', props)
 
   return (
     <>
