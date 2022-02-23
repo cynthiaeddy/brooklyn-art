@@ -9,10 +9,13 @@ const SearchResults = props => {
     const term = props.term
     axios.get(`api/${term}`).then(response => {
       setArtist(response.data)
+      // console.log(response.data)
+      // const filterArtist =
+      // response.data.map(d => [console.log('in d', d.object_id)])
     })
   }, [props.term])
 
-  console.log(artist)
+  // console.log(artist)
 
   return (
     <div className='artist-container'>

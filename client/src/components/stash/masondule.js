@@ -7,9 +7,15 @@ const MasonryGrid = props => {
     if (props.cards === '0 results found') {
       return <h4>0 results found</h4>
     }
-    props.cards.map(artData => firstArtObj.push(artData.data[0]))
+    // console.log(props.cards)
+    props.cards.map(
+      artData => firstArtObj.push(artData.data[0]),
+      console.log('here in artData')
+    )
 
-    return firstArtObj.map(art => {
+    firstArtObj.map(art => {
+      console.log('here in firstArtmap', art, art.caption)
+
       return (
         <ArtistCard
           caption={art.caption}
@@ -20,6 +26,7 @@ const MasonryGrid = props => {
         />
       )
     })
+    console.log('after artist card')
   }
 
   return (
