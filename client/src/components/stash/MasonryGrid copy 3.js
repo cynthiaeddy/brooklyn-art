@@ -8,22 +8,22 @@ const MasonryGrid = props => {
     } else {
       console.log(props.cards)
       props.cards.map(artData =>
-        artData.data.map(art => {
-          // let fileNumber = art.filename.split('_')[0]
-          // console.log(fileNumber, art.object_id)
-          return (
-            <ArtistCard
-              caption={art.caption}
-              key={art.id}
-              img={art.largest_derivative_url}
-              smImg={art.standard_size_url}
-              art={art}
-            />
-          )
-        })
-      )
-    }
+      artData.data.map(art => {
+        let fileNumber = art.filename.split('_')[0]
+        console.log(fileNumber, art.object_id)
+        return (
+          <ArtistCard
+            caption={art.caption}
+            key={art.id}
+            img={art.largest_derivative_url}
+            smImg={art.standard_size_url}
+            art={art}
+          />
+        )
+      })
+    )
   }
+
   return (
     <>
       <div className='masonry-container'>
