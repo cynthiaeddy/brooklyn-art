@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import MasonryGrid from './MasonryGrid'
+import ArtistCard from './ArtistCard'
 const axios = require('axios')
 
 const SearchResults = props => {
@@ -9,18 +9,33 @@ const SearchResults = props => {
     const term = props.term
     axios.get(`api/${term}`).then(response => {
       setArtist(response.data)
-      // console.log(response.data)
-      // const filterArtist =
-      // response.data.map(d => [console.log('in d', d.object_id)])
     })
   }, [props.term])
+  console.log(artist)
 
-  // console.log(artist)
+  const firstArtObj = []
+  const renderCards = () => {
+    if (artist === '0 results found') {
+      return <h4>0 results found</h4>
+    }
+    artist.map(artData => firstArtObj.push(artData.data[0]))
 
+    return firstArtObj.map(art => {
+      return (
+        <ArtistCard
+          caption={art.caption}
+          key={art.id}
+          img={art.largest_derivative_url}
+          smImg={art.standard_size_url}
+          art={art}
+        />
+      )
+    })
+  }
   return (
-    <div className='artist-container'>
-      <MasonryGrid cards={artist} />
-    </div>
+    <>
+      <div className='wrapper'>{renderCards()}</div>
+    </>
   )
 }
 

@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 
 const ArtistCard = props => {
-  console.log(
-    'artist card, props',
-    props,
-    'props.caption',
-    props.caption,
-    'props.art',
-    props.art
-  )
+  // console.log(
+  //   'artist card, props',
+  //   props,
+  //   'props.caption',
+  //   props.caption,
+  //   'props.art',
+  //   props.art
+  // )
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]
   const titleName = captionSplit[1].split(',')[0]

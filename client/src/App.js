@@ -7,14 +7,11 @@ import {
 } from 'react-router-dom'
 import Search from './components/Search'
 import ArtCard from './components/ArtCard'
-import MasonryGrid from './components/MasonryGrid'
 
 function App() {
   let routes = (
     <Routes>
       <Route exact path='/' element={<Search />} />
-
-      <Route path='artist' element={<MasonryGrid />} />
 
       <Route path='/:title' element={<ArtCard />} />
     </Routes>
