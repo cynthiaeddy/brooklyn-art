@@ -9,6 +9,7 @@ import bgPic3 from './assets/scribbles.jpg'
 import bgPic4 from './assets/birds.jpg'
 import bgPic5 from './assets/bwphoto.jpg'
 import bgPic6 from './assets/nexthero.jpg'
+import Intro from './components/Intro'
 
 function App() {
   const [bgImage, setBgImage] = useState('')
@@ -31,6 +32,7 @@ function App() {
   )
   return (
     <Router>
+      {/* <Intro /> */}
       <div className='container' style={{ backgroundImage: bgImage }}>
         {routes}
       </div>

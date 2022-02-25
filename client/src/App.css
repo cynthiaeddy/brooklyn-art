@@ -5,8 +5,6 @@ body {
   margin: 0;
   padding: 0;
   overscroll-behavior: none;
-  /* overflow: visible;
-  scroll-behavior: smooth; */
 }
 
 .container {
@@ -24,15 +22,16 @@ body {
 }
 .search {
   overflow-y: auto;
+  margin-top: 280px;
+  margin-bottom: 50px;
 }
+
 .wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px 20px; /* row-gap column gap */
   max-width: 1100px;
-  margin-top: 20px;
-  overflow-y: auto;
 }
 
 .box {
@@ -48,7 +47,7 @@ a {
 }
 h6 {
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 h4 {
@@ -67,30 +66,26 @@ h4 {
   margin-top: 225px;
   padding: 50px;
 }
+
 .search-word {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -70%);
   background: black;
   padding: 20px;
   margin: auto;
-  margin-top: 50px;
   width: 200px;
+  height: 160px;
 }
 .search-word-input {
   color: white;
   text-align: center;
 }
 .search-word.no-results {
-  margin-top: -60px;
-  padding-bottom: 40px;
+  padding-top: 60px;
 }
-.nav {
-  position: fixed;
-  height: 75px;
-  width: 100vw;
-  background: snow;
-  display: flex;
-  /* justify-content: space-between;
-  align-items: center; */
-}
+
 input {
   text-align: center;
 }
@@ -99,4 +94,15 @@ input:focus {
 }
 ul {
   list-style-type: none;
+}
+.intro {
+  background: chocolate;
+  width: 40%;
+  padding: 30px;
+  color: white;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -60%);
 }
