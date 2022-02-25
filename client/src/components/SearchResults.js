@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import ArtistCard from './ArtistCard'
+import RandomBkImg from './RandomBkImg'
 const axios = require('axios')
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
+  console.log(props, props.changeBg)
 
   useEffect(() => {
     const term = props.term
@@ -11,7 +13,6 @@ const SearchResults = props => {
       setArtist(response.data)
     })
   }, [props.term])
-  console.log(artist)
 
   const firstArtObj = []
   const renderCards = () => {
@@ -34,6 +35,7 @@ const SearchResults = props => {
   }
   return (
     <>
+      {props.changeBg()}
       <div className='wrapper'>{renderCards()}</div>
     </>
   )

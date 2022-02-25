@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import SearchResults from './SearchResults'
 import Debounce from '../hooks/Debounce'
-// import '../stylesheets/Search.css'
 
-const Search = () => {
+const Search = props => {
+  console.log('search', props.changeBg)
   const [searchTerm, setSearchTerm] = useState('')
   const debouncedSearchTerm = Debounce(searchTerm, 1000)
 
@@ -30,7 +30,7 @@ const Search = () => {
               <h1>{searchTerm}</h1>
             </div>
           </div>
-          <SearchResults term={debouncedSearchTerm} />
+          <SearchResults term={debouncedSearchTerm} changeBg={props.changeBg} />
         </div>
       )}
     </div>
