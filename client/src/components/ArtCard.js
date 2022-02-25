@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 
 const ArtCard = () => {
-  let title = useParams().title
   const location = useLocation()
   const { from } = location.state
 
@@ -21,6 +20,7 @@ const ArtCard = () => {
         <br></br>
         Why is the image so small? because it's copywrited blurb here
       </h6>
+      {/* {props.changeBg()} */}
     </div>
   )
 }

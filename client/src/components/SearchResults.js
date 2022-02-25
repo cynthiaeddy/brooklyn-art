@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import ArtistCard from './ArtistCard'
-import RandomBkImg from './RandomBkImg'
 const axios = require('axios')
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
-  console.log(props, props.changeBg)
 
   useEffect(() => {
     const term = props.term
@@ -29,6 +27,7 @@ const SearchResults = props => {
           img={art.largest_derivative_url}
           smImg={art.standard_size_url}
           art={art}
+          // changeBg={props.changeBg}
         />
       )
     })
