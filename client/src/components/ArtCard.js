@@ -2,6 +2,8 @@ import React from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 
 const ArtCard = () => {
+  console.log('im in artcard')
+  // let title = useParams().title
   const location = useLocation()
   const { from } = location.state
 

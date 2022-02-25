@@ -23,8 +23,8 @@ const ArtistCard = props => {
             <span style={{ fontStyle: 'normal' }}>{titleYear}</span>
           </h6>
         </Link>
-        {/* {props.changeBg()} */}
       </div>
+      {props.changeBg()}
     </>
   )
 }
