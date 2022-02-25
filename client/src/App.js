@@ -6,14 +6,13 @@ import Search from './components/Search'
 import bgPic1 from './assets/hero.jpg'
 import bgPic2 from './assets/turner.jpg'
 import bgPic3 from './assets/scribbles.jpg'
-import bgPic4 from './assets/animals.jpg'
+import bgPic4 from './assets/birds.jpg'
 import bgPic5 from './assets/bwphoto.jpg'
 import bgPic6 from './assets/nexthero.jpg'
 
 function App() {
-  const [bgImage, setBgImage] = useState(``)
+  const [bgImage, setBgImage] = useState('')
 
-  console.log('me change', bgImage)
   // send function to searchresults to trigger bkimg change
 
   const changeBg = () => {

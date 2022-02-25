@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
+
+const element = <FontAwesomeIcon icon={faHome} />
+
 const axios = require('axios')
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
+
+  const refreshPage = () => {
+    window.location.reload(false)
+  }
 
   useEffect(() => {
     const term = props.term
@@ -11,11 +20,20 @@ const SearchResults = props => {
       setArtist(response.data)
     })
   }, [props.term])
+  console.log(artist)
 
   const firstArtObj = []
   const renderCards = () => {
-    if (artist === '0 results found') {
-      return <h4 className='search-word no-results'>0 results found</h4>
+    if (artist === '0 results found' || artist.length < 3) {
+      return (
+        <h4 className='search-word no-results'>
+          0 results found
+          <br />
+          <button onClick={refreshPage} style={{ marginTop: '10px' }}>
+            {element}
+          </button>
+        </h4>
+      )
     }
     artist.map(artData => firstArtObj.push(artData.data[0]))
 
@@ -34,8 +52,8 @@ const SearchResults = props => {
   }
   return (
     <>
+      {/* <div className='wrapper'>{artist.length && renderCards()}</div> */}
       <div className='wrapper'>{renderCards()}</div>
-      {/* {props.changeBg()} */}
     </>
   )
 }

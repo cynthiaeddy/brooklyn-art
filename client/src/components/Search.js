@@ -17,6 +17,7 @@ const Search = props => {
               <input
                 type='text'
                 value={searchTerm}
+                autoFocus
                 onChange={e => setSearchTerm(e.target.value)}
               />
             </div>
@@ -30,7 +31,11 @@ const Search = props => {
               <h1>{searchTerm}</h1>
             </div>
           </div>
-          <SearchResults term={debouncedSearchTerm} changeBg={props.changeBg} />
+          <SearchResults
+            term={debouncedSearchTerm}
+            changeBg={props.changeBg}
+            searchTerm={searchTerm}
+          />
         </div>
       )}
     </div>
