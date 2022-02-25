@@ -15,7 +15,7 @@ const SearchResults = props => {
   const firstArtObj = []
   const renderCards = () => {
     if (artist === '0 results found') {
-      return <h4>0 results found</h4>
+      return <h4 className='search-word no-results'>0 results found</h4>
     }
     artist.map(artData => firstArtObj.push(artData.data[0]))
 

@@ -8,21 +8,26 @@ body {
 }
 
 .container {
+  background: black;
   background-image: url('./assets/lovephoto.jpg');
   /* background-image: bkImg; */
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-position: center;
 }
 .wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px 20px; /* row-gap column gap */
-  max-width: 1280px;
+  max-width: 1100px;
+  margin-top: 20px;
 }
 
 .box {
@@ -40,6 +45,10 @@ h6 {
   margin-bottom: 0;
   margin-top: 10px;
 }
+
+h4 {
+  color: white;
+}
 .card {
   padding: 20px;
   background: white;
@@ -50,6 +59,20 @@ h6 {
 
 .card.indie {
   height: fit-content;
-  margin-top: 150px;
+  margin-top: 225px;
   padding: 50px;
+}
+.search-word {
+  background: black;
+  padding: 20px;
+  margin: auto;
+  margin-top: 50px;
+  width: 200px;
+}
+.search-word-input {
+  color: white;
+}
+.search-word.no-results {
+  margin-top: -60px;
+  padding-bottom: 40px;
 }

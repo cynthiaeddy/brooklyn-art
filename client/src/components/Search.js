@@ -8,12 +8,12 @@ const Search = props => {
   const debouncedSearchTerm = Debounce(searchTerm, 1000)
 
   return (
-    <div className='Search'>
+    <div className='search'>
       {!debouncedSearchTerm ? (
-        <div className='Search-input'>
-          <div className='Search-word'>
+        <div className='search-input'>
+          <div className='search-word'>
             <h4>Search: </h4>
-            <div className='Search-word-input'>
+            <div className='search-word-input'>
               <input
                 type='text'
                 value={searchTerm}
@@ -23,10 +23,10 @@ const Search = props => {
           </div>
         </div>
       ) : (
-        <div className='Search-input'>
-          <div className='Search-word'>
+        <div className='search-input'>
+          <div className='search-word'>
             <h4>Your Results: </h4>{' '}
-            <div className='Search-word-input'>
+            <div className='search-word-input'>
               <h1>{searchTerm}</h1>
             </div>
           </div>
