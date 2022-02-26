@@ -10,9 +10,18 @@ import bgPic4 from './assets/birds.jpg'
 import bgPic5 from './assets/bwphoto.jpg'
 import bgPic6 from './assets/nexthero.jpg'
 import Intro from './components/Intro'
+import Navbar from './components/Navbar'
 
 function App() {
   const [bgImage, setBgImage] = useState('')
+  const [introOpen, setIntroOpen] = useState(false)
+
+  const introOpenOnClick = () => {
+    console.log('in introopen app')
+    // If your new state update depends on the previous state, always use the functional form of setState which accepts as argument a function that returns a new state.
+    setIntroOpen(!introOpen)
+    console.log('introOpen', introOpen)
+  }
 
   // send function to searchresults to trigger bkimg change
 
@@ -32,8 +41,9 @@ function App() {
   )
   return (
     <Router>
-      {/* <Intro /> */}
       <div className='container' style={{ backgroundImage: bgImage }}>
+        <Navbar introOpenOnClick={introOpenOnClick} introOpen={introOpen} />
+        <Intro introOpen={introOpen} />
         {routes}
       </div>
     </Router>

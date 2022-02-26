@@ -12,7 +12,7 @@ const Search = props => {
       {!debouncedSearchTerm ? (
         <div className='search-input'>
           <div className='search-word'>
-            <h4>Search: </h4>
+            <h5>Search </h5>
             <div className='search-word-input'>
               <input
                 type='text'
@@ -26,11 +26,12 @@ const Search = props => {
       ) : (
         <div className='search-input'>
           <div className='search-word'>
-            <h4>Your Results: </h4>{' '}
+            <h5>Your Results </h5>{' '}
             <div className='search-word-input'>
-              <h1>{searchTerm}</h1>
+              <h3>{searchTerm}</h3>
             </div>
           </div>
+
           <SearchResults
             term={debouncedSearchTerm}
             changeBg={props.changeBg}

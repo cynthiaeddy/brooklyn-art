@@ -36,10 +36,10 @@ const ArtCard = () => {
         onClick={routeChange}
         style={{
           marginTop: '10px',
-          color: 'white',
-          background: 'black',
+          color: 'black',
           border: 'none',
           textAlign: 'center',
+          background: 'none',
         }}>
         {element}
       </button>

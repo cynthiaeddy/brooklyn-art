@@ -1,14 +1,12 @@
-import { useState } from 'react'
-
-const Intro = () => {
-  const [visable, setVisable] = useState(true)
-
-  const handleClick = () => {
-    setVisable(false)
+const Intro = props => {
+  let classes = ['menu']
+  if (props.introOpen) {
+    classes = ['menu open']
   }
+  console.log(props.introOpen, classes)
+
   return (
-    <div className='intro'>
-      <button onClick={handleClick}></button>
+    <div className={classes}>
       <h3>header</h3>
       <p>
         Lorem ipsum dolor sit amet, qui ut choro audiam. Cu saepe oporteat ius,

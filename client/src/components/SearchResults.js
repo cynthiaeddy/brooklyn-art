@@ -26,13 +26,13 @@ const SearchResults = props => {
   const renderCards = () => {
     if (artist === '0 results found' || artist.length < 3) {
       return (
-        <h4 className='search-word no-results'>
+        <h5 className='search-word no-results'>
           0 results found
           <br />
           <button onClick={refreshPage} style={{ marginTop: '10px' }}>
             {element}
           </button>
-        </h4>
+        </h5>
       )
     }
     artist.map(artData => firstArtObj.push(artData.data[0]))
