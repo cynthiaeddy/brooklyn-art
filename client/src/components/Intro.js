@@ -1,7 +1,9 @@
+import '../stylesheets/Intro&Nav.css'
+
 const Intro = props => {
-  let classes = ['menu']
+  let classes = ['intro']
   if (props.introOpen) {
-    classes = ['menu open']
+    classes = ['intro open']
   }
   console.log(props.introOpen, classes)
 

@@ -2,11 +2,11 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
+import '../stylesheets/Card.css'
 
 const element = <FontAwesomeIcon icon={faHome} />
 
 const ArtCard = () => {
-  console.log('im in artcard')
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
@@ -23,24 +23,16 @@ const ArtCard = () => {
   return (
     <div className='card indie'>
       <div className='box indie'></div>
-      <h2 style={{ fontStyle: 'italic' }}>{titleName}</h2>
+      <h2>{titleName}</h2>
       <h3>{justName}</h3>
-      <h6 style={{ textAlign: 'left', color: 'grey' }}>
+      <h6>
         {cleanCaption}
         <br />
         <br></br>
         Why is the image so small? because it's copywrited blurb here
         <br /> <br />
       </h6>
-      <button
-        onClick={routeChange}
-        style={{
-          marginTop: '10px',
-          color: 'black',
-          border: 'none',
-          textAlign: 'center',
-          background: 'none',
-        }}>
+      <button onClick={routeChange} className='btn-route-change'>
         {element}
       </button>
     </div>

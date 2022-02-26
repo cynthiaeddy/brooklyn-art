@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import SearchResults from './SearchResults'
 import Debounce from '../hooks/Debounce'
+import '../stylesheets/Search.css'
 
 const Search = props => {
-  console.log('search', props.changeBg)
   const [searchTerm, setSearchTerm] = useState('')
   const debouncedSearchTerm = Debounce(searchTerm, 1000)
 
   return (
     <div className='search'>
       {!debouncedSearchTerm ? (
-        <div className='search-input'>
+        <>
           <div className='search-word'>
             <h5>Search </h5>
             <div className='search-word-input'>
@@ -22,9 +22,9 @@ const Search = props => {
               />
             </div>
           </div>
-        </div>
+        </>
       ) : (
-        <div className='search-input'>
+        <>
           <div className='search-word'>
             <h5>Your Results </h5>{' '}
             <div className='search-word-input'>
@@ -37,7 +37,7 @@ const Search = props => {
             changeBg={props.changeBg}
             searchTerm={searchTerm}
           />
-        </div>
+        </>
       )}
     </div>
   )

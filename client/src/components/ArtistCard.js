@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../stylesheets/Card.css'
 
 const ArtistCard = props => {
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
@@ -16,11 +17,11 @@ const ArtistCard = props => {
           to={`/${deleteNameSpace.toLowerCase()}`}
           state={{ from: props.art }}>
           <div className='box'></div>
-          <img src={props.img} style={{ width: '300px' }} />
+          <img src={props.img} className='small-img' />
           <h6>{name}</h6>
-          <h6 style={{ marginBottom: '0', fontStyle: 'italic' }}>
+          <h6 className='h6-italic'>
             {titleName}
-            <span style={{ fontStyle: 'normal' }}>{titleYear}</span>
+            <span>{titleYear}</span>
           </h6>
         </Link>
       </div>

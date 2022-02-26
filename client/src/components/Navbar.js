@@ -1,3 +1,5 @@
+import '../stylesheets/Intro&Nav.css'
+
 const Navbar = props => {
   let btnChange
   if (!props.introOpen) {
