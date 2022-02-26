@@ -5,7 +5,6 @@ const Intro = props => {
   if (props.introOpen) {
     classes = ['intro open']
   }
-  console.log(props.introOpen, classes)
 
   return (
     <div className={classes}>

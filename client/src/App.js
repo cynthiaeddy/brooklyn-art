@@ -17,10 +17,7 @@ function App() {
   const [introOpen, setIntroOpen] = useState(false)
 
   const introOpenOnClick = () => {
-    console.log('in introopen app')
-    // If your new state update depends on the previous state, always use the functional form of setState which accepts as argument a function that returns a new state.
     setIntroOpen(!introOpen)
-    console.log('introOpen', introOpen)
   }
 
   // send function to searchresults to trigger bkimg change
