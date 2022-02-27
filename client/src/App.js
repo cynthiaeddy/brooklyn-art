@@ -13,6 +13,7 @@ import bgPic8 from './assets/wheels.jpg'
 import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
+import Frontis from './components/Frontis'
 
 function App() {
   const [bgImage, setBgImage] = useState('')
@@ -50,6 +51,7 @@ function App() {
   )
   return (
     <Router>
+      <Frontis />
       <div className='container' style={{ backgroundImage: bgImage }}>
         <Navbar introOpenOnClick={introOpenOnClick} introOpen={introOpen} />
         <Intro introOpen={introOpen} />

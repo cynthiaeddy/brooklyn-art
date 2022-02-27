@@ -1,0 +1,11 @@
+.frontis {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  font-family: itc-american-typewriter, serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 70px;
+  padding-top: 50px;
+}
