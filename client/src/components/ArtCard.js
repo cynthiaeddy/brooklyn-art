@@ -25,13 +25,8 @@ const ArtCard = () => {
       <div className='box indie'></div>
       <h2>{titleName}</h2>
       <h3>{justName}</h3>
-      <h6>
-        {cleanCaption}
-        <br />
-        <br></br>
-        Why is the image so small? because it's copywrited blurb here
-        <br /> <br />
-      </h6>
+      <h6>{cleanCaption}</h6>
+      <br />
       <button onClick={routeChange} className='btn-route-change'>
         {element}
       </button>

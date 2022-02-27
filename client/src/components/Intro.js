@@ -8,18 +8,26 @@ const Intro = props => {
 
   return (
     <div className={classes}>
-      <h3>header</h3>
+      <h3>Why oh why</h3>
+      <h5>are these images so small? </h5>
+      <p>you might ask.</p>
+      <h5>brooklyn museum:</h5>
       <p>
-        Lorem ipsum dolor sit amet, qui ut choro audiam. Cu saepe oporteat ius,
-        no pri prima inani conclusionemque. Quem impedit molestiae est id.
-        Explicari similique id duo, ex sonet necessitatibus qui. Sit ne solum
-        fabulas. Vel ut partem commune, nostrum quaerendum in cum, id choro
-        bonorum perpetua has. Copiosae menandri patrioque ut has, ullum pericula
-        iracundia eu vim. Eirmod audiam erroribus mei eu. Sea in purto case
-        alterum, at ius inani labitur epicuri, eos an ceteros eloquentiam. Sed
-        altera minimum cu, et est utroque ponderum accommodare, melius bonorum
-        ea vim. Has sonet scaevola ad, et graece graeco pri. Nec nihil nusquam
-        maiestatis ex, sit mutat aeque te.
+        This image is presented as a "thumbnail" because it is protected by
+        copyright. The Brooklyn Museum respects the rights of artists who retain
+        the copyright to their work.
+      </p>
+      <h5>therefore,</h5>
+      <p>
+        all of the images presented here are small. The random background images
+        I selected are from various collections of the Brooklyn Museum (mainly
+        contemporary) that weren't protected by said copyright.
+      </p>
+      <h5>I mainly created this app</h5>{' '}
+      <p>
+        to explore fetching api calls while gathering information about great
+        art. The search critera only shows responses with images, as well as
+        needing at least three characters in the search input.
       </p>
     </div>
   )

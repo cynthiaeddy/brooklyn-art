@@ -7,7 +7,7 @@
   z-index: 40;
   left: 50%;
   top: 30%;
-  transform: translate(-50%, -61%);
+  transform: translate(-50%, -45%);
   visibility: hidden;
 }
 .intro.open {
@@ -15,6 +15,12 @@
 }
 .intro h3 {
   font-size: 40px;
+}
+.intro.open h5 {
+  margin-bottom: 5px;
+}
+.intro.open p {
+  margin: 0;
 }
 .btn-navbar {
   font-family: itc-american-typewriter, serif;
