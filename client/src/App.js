@@ -35,7 +35,6 @@ function App() {
       bgPic7,
       bgPic8,
     ]
-    // const picArray = [bgPic1, bgPic2, bgPic3, bgPic4, bgPic5, bgPic6]
 
     const randomIndex = Math.floor(Math.random() * picArray.length)
     const selectbkImg = picArray[randomIndex]

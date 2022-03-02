@@ -13,9 +13,9 @@ const Intro = props => {
       <p>you might ask.</p>
       <h5>brooklyn museum:</h5>
       <p>
-        This image is presented as a "thumbnail" because it is protected by
+        "This image is presented as a "thumbnail" because it is protected by
         copyright. The Brooklyn Museum respects the rights of artists who retain
-        the copyright to their work.
+        the copyright to their work."
       </p>
       <h5>therefore,</h5>
       <p>
