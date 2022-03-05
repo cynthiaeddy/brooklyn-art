@@ -10,6 +10,7 @@ const ArtCard = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
+  console.log(from.standard_size_url, 'in art card')
 
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]
@@ -23,6 +24,7 @@ const ArtCard = () => {
   return (
     <div className='card indie'>
       <div className='box indie'></div>
+      <img src={from.standard_size_url} className='small-img' alt='' />
       <h2>{titleName}</h2>
       <h3>{justName}</h3>
       <h6>{cleanCaption}</h6>

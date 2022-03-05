@@ -37,3 +37,7 @@
   text-align: center;
   background: none;
 }
+.small-img {
+  width: 300px;
+  height: 200px;
+}

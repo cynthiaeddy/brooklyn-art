@@ -34,8 +34,8 @@ const SearchResults = props => {
         </h5>
       )
     }
-    artist.map(artData => firstArtObj.push(artData.data[0]))
 
+    artist.map(artData => firstArtObj.push(artData.data[0]))
     return firstArtObj.map(art => {
       return (
         <ArtistCard

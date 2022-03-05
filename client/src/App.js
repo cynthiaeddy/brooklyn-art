@@ -46,6 +46,7 @@ function App() {
     <Routes>
       <Route exact path='/' element={<Search changeBg={changeBg} />} />
       <Route path='/:title' element={<ArtCard />} />
+      <Route path='*' element={{ Error }} />
     </Routes>
   )
   return (

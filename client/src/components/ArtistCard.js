@@ -9,6 +9,7 @@ const ArtistCard = props => {
   const title = captionSplit[1].split('(')[0]
 
   const deleteNameSpace = title.replace(/\s+/g, '')
+  // console.log(props.img, 'props.img', typeof props.img, { props: props.img })
 
   return (
     <>
@@ -16,8 +17,13 @@ const ArtistCard = props => {
         <Link
           to={`/${deleteNameSpace.toLowerCase()}`}
           state={{ from: props.art }}>
-          <div className='box'></div>
-          <img src={props.img} className='small-img' alt='' />
+          <div className='box'> </div>
+          <img
+            src={`https://www.d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size_fairuse/41.1005_bw_IMLS.jpg`}
+            className='small-img'
+            alt=''
+          />
+
           {console.log(props.img)}
           <h6>{name}</h6>
           <h6 className='h6-italic'>
