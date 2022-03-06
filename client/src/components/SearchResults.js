@@ -3,18 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
-import { useNavigate } from 'react-router-dom'
 const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
-  const navigate = useNavigate()
-
-  const refreshPage = () => {
-    window.location.reload(false)
-  }
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const term = props.term
@@ -23,6 +18,20 @@ const SearchResults = props => {
     })
   }, [props.term])
 
+  const refreshPage = () => {
+    window.location.reload(false)
+  }
+
+  // useEffect(() => {
+  //   const handler = setTimeout(() => {
+  //     setLoading(false)
+  //   }, 100)
+
+  //   return () => {
+  //     clearTimeout(handler)
+  //   }
+  // }, [])
+
   const firstArtObj = []
   const renderCards = () => {
     if (artist === '0 results found' || artist.length < 3) {
@@ -30,7 +39,6 @@ const SearchResults = props => {
         <h5 className='search-word no-results'>
           0 results found
           <br />
-          {/* <button onClick={() => navigate(-1)}>{element}</button> */}
           <button className='btn-home' onClick={refreshPage}>
             {element}
           </button>
@@ -54,7 +62,10 @@ const SearchResults = props => {
   }
   return (
     <>
-      <div className='wrapper'>{renderCards()}</div>
+      <div className='wrapper'>
+        {renderCards()}
+        {/* {!loading && renderCards()} */}
+      </div>
     </>
   )
 }

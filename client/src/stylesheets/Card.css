@@ -41,3 +41,16 @@
   width: 300px;
   height: 200px;
 }
+@media (max-width: 600px) {
+  .card {
+    width: 80%;
+  }
+  .card.indie {
+    height: fit-content;
+    margin-top: 275px;
+    padding: 20px;
+  }
+  .btn-route-change {
+    margin-top: -5px;
+  }
+}

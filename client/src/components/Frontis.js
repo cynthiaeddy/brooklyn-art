@@ -4,7 +4,6 @@ import '../stylesheets/Frontis.css'
 const Frontis = () => {
   const [timePassed, setTimePassed] = useState(false)
   const [animate, setAnimate] = useState(true)
-  const snickers = true
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -14,7 +13,7 @@ const Frontis = () => {
     return () => {
       clearTimeout(handler)
     }
-  }, [snickers])
+  }, [])
 
   useEffect(() => {
     if (window.sessionStorage.getItem('firstLoadDone') === null) {
