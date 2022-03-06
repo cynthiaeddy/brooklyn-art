@@ -29,7 +29,13 @@ const Frontis = () => {
       {animate && !timePassed ? (
         <div className='frontis'>
           <div className='type'>
-            <h1>The Brooklyn Art Museum Project</h1>
+            <h1>
+              The <br />
+              Brooklyn <br />
+              Art
+              <br /> Museum <br />
+              Project
+            </h1>
           </div>
         </div>
       ) : null}
