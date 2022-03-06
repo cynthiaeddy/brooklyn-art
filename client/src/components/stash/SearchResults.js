@@ -3,14 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
-import { useNavigate } from 'react-router-dom'
 const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
-  const navigate = useNavigate()
 
   const refreshPage = () => {
     window.location.reload(false)
@@ -30,7 +28,6 @@ const SearchResults = props => {
         <h5 className='search-word no-results'>
           0 results found
           <br />
-          {/* <button onClick={() => navigate(-1)}>{element}</button> */}
           <button className='btn-home' onClick={refreshPage}>
             {element}
           </button>

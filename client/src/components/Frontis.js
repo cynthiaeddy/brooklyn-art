@@ -3,6 +3,7 @@ import '../stylesheets/Frontis.css'
 
 const Frontis = () => {
   const [timePassed, setTimePassed] = useState(false)
+  const [animate, setAnimate] = useState(true)
   const snickers = true
 
   useEffect(() => {
@@ -15,9 +16,18 @@ const Frontis = () => {
     }
   }, [snickers])
 
+  useEffect(() => {
+    if (window.sessionStorage.getItem('firstLoadDone') === null) {
+      setAnimate(true)
+      window.sessionStorage.setItem('firstLoadDone', 1)
+    } else {
+      setAnimate(false)
+    }
+  }, [])
+
   return (
     <>
-      {!timePassed ? (
+      {animate && !timePassed ? (
         <div className='frontis'>
           <div className='type'>
             <h1>The Brooklyn Art Museum Project</h1>
