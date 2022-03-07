@@ -1,7 +1,11 @@
+import { PromiseProvider } from 'mongoose'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../stylesheets/Card.css'
 
 const ArtistCard = props => {
+  const bgImage = ''
+
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]
   const titleName = captionSplit[1].split(',')[0]
@@ -9,6 +13,9 @@ const ArtistCard = props => {
   const title = captionSplit[1].split('(')[0]
 
   const deleteNameSpace = title.replace(/\s+/g, '')
+
+  useEffect(_ => props.changeBg(bgImage), [bgImage])
+  console.log(props.img, 'in artist card')
 
   return (
     <>
@@ -18,12 +25,11 @@ const ArtistCard = props => {
           state={{ from: props.art }}>
           <div className='box'> </div>
           <img
-            src={`https://www.d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size_fairuse/41.1005_bw_IMLS.jpg`}
+            src={`https://${props.img}`}
             className='small-img'
             alt={titleName}
           />
 
-          {console.log(props.img)}
           <h6>{name}</h6>
           <h6 className='h6-italic'>
             {titleName}
@@ -31,7 +37,6 @@ const ArtistCard = props => {
           </h6>
         </Link>
       </div>
-      {props.changeBg()}
     </>
   )
 }

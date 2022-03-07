@@ -25,7 +25,7 @@ const SearchResults = props => {
   // useEffect(() => {
   //   const handler = setTimeout(() => {
   //     setLoading(false)
-  //   }, 100)
+  //   }, 500)
 
   //   return () => {
   //     clearTimeout(handler)

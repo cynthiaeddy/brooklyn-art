@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Search from './components/Search'
 import bgPic1 from './assets/turner.jpg'
 import bgPic2 from './assets/scribbles.jpg'
