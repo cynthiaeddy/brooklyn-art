@@ -70,7 +70,7 @@ h6 {
 }
 /* //////// media queries /////////// */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .container {
     background-size: cover;
   }

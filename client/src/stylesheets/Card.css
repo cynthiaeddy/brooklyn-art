@@ -5,63 +5,42 @@
   font-style: normal;
 }
 
-.box {
-  margin: auto;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background: sienna;
-}
 .card {
-  padding: 20px;
-  background: white;
-  width: 30%;
-  align-content: center;
+  /* padding: 30px; */
+  background: snow;
+  /* padding-right: 20px; */
+  padding: 30px 20px 20px 30px;
 }
 
 .card.indie {
   height: fit-content;
-  margin-top: 275px;
+  margin-top: 105px;
   padding: 30px;
+  width: 30%;
+  max-width: 500px;
+  padding-right: 20px;
 }
 .card.indie h6 {
   color: grey;
 }
 .btn-route-change {
-  margin-top: 10px;
   color: black;
   border: none;
   text-align: center;
   background: none;
 }
 .small-img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  padding-right: 10px;
+}
+.card.indie img.small-img {
+  width: 100%;
 }
 @media (max-width: 900px) {
-  .card {
-    width: 40%;
-  }
-  .card.indie {
-    height: fit-content;
-    margin-top: 275px;
-    padding: 20px;
-  }
   .btn-route-change {
     margin-top: -5px;
   }
-}
-
-@media (max-width: 600px) {
-  .card {
-    width: 80%;
-  }
   .card.indie {
-    height: fit-content;
-    margin-top: 275px;
-    padding: 20px;
-  }
-  .btn-route-change {
-    margin-top: -5px;
+    width: 50%;
   }
 }

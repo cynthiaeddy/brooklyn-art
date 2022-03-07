@@ -1,13 +1,6 @@
-.wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px 20px; /* row-gap column gap */
-  max-width: 1100px;
-}
 .search {
   overflow-y: auto;
-  margin-top: 280px;
+  margin-top: 330px;
   margin-bottom: 50px;
 }
 .search-word {

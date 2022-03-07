@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
-import '../stylesheets/Masonry.css'
-
 const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
@@ -23,7 +21,6 @@ const SearchResults = props => {
   const refreshPage = () => {
     window.location.reload(false)
   }
-  // console.log(props, 'props searchresults', artist)
 
   // useEffect(() => {
   //   const handler = setTimeout(() => {
@@ -64,12 +61,12 @@ const SearchResults = props => {
     })
   }
   return (
-    <div className='masonry-container'>
-      {/* <div className='copy'></div> */}
+    <>
       <div className='wrapper'>
-        <div className='masonry bordered'>{renderCards()}</div>
+        {renderCards()}
+        {/* {!loading && renderCards()} */}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -23,8 +23,11 @@ const ArtCard = () => {
 
   return (
     <div className='card indie'>
-      <div className='box indie'></div>
-      <img src={from.standard_size_url} className='small-img' alt={titleName} />
+      <img
+        src={`https://${from.standard_size_url}`}
+        className='small-img'
+        alt={titleName}
+      />
       <h2>{titleName}</h2>
       <h3>{justName}</h3>
       <h6>{cleanCaption}</h6>
