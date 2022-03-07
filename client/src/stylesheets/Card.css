@@ -8,8 +8,10 @@
 .card {
   /* padding: 30px; */
   background: snow;
-  /* padding-right: 20px; */
+  width: 30%;
+  /* padding-ri;ght: 20px; */
   padding: 30px 20px 20px 30px;
+  margin-right: 50px;
 }
 
 .card.indie {
