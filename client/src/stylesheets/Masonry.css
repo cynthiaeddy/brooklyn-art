@@ -1,81 +1,20 @@
-.masonry-container {
-  width: 81%;
-  max-width: 1166px;
-  margin: auto;
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
 }
-img.card-img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1166px;
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
 }
 
-.masonry.bordered .card {
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
   margin-bottom: 50px;
-}
-/* Defaults */
-
-/* Masonry grid */
-.masonry {
-  transition: all 0.5s ease-in-out;
-  column-gap: 30px;
-  column-fill: initial;
-}
-
-/* Masonry item */
-.masonry .card {
-  margin-bottom: 30px;
-  display: inline-block; /* Fix the misalignment of items */
-  vertical-align: top; /* Keep the item on the very top */
-}
-
-/* Bordered masonry */
-.masonry.bordered {
-  column-gap: 55px;
-}
-
-.card h6 {
-  /* margin: 30px 0; */
-  color: #9f9f9f;
-  margin: 5px;
-  /* margin: 40px 0 25px 0; */
-}
-.card p {
-  font-size: 14px;
-  margin-top: 25px;
-}
-.card p span {
-  border-bottom: 1px solid #767676;
-  padding-bottom: 3px;
-  text-transform: uppercase;
-}
-h2 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.1em;
-  text-decoration-thickness: 3px;
-}
-/* Masonry on tablets */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .masonry {
-    column-count: 2;
-  }
-}
-
-/* Masonry on big screens */
-@media only screen and (min-width: 1024px) {
-  .desc {
-    font-size: 1.25em;
-  }
-
-  .intro {
-    letter-spacing: 1px;
-  }
-
-  /* .masonry {
-    column-count: 3;
-  } */
+  /* width: 80%; */
+  /* margin: auto; */
 }

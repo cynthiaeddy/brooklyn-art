@@ -4,9 +4,6 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
 import '../stylesheets/Masonry.css'
-import Masonry from 'react-masonry-css'
-
-//...
 
 const axios = require('axios')
 
@@ -67,18 +64,12 @@ const SearchResults = props => {
     })
   }
   return (
-    <Masonry
-      breakpointCols={3}
-      className='my-masonry-grid'
-      columnClassName='my-masonry-grid_column'>
-      {renderCards()}
-    </Masonry>
-    // <div className='masonry-container'>
-    //   {/* <div className='copy'></div> */}
-    //   <div className='wrapper'>
-    //     <div className='masonry bordered'>{renderCards()}</div>
-    //   </div>
-    // </div>
+    <div className='masonry-container'>
+      {/* <div className='copy'></div> */}
+      <div className='wrapper'>
+        <div className='masonry bordered'>{renderCards()}</div>
+      </div>
+    </div>
   )
 }
 
