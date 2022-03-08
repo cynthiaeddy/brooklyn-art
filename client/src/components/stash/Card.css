@@ -6,11 +6,7 @@
 }
 
 .card {
-  /* padding: 20px; */
-  background: white;
-  /* width: 30%;
-  height: fit-content;
-  align-content: center; */
+  background: black;
 }
 
 .card.indie {
@@ -19,9 +15,7 @@
   padding: 30px;
   width: 50%;
 }
-.card.indie h6 {
-  color: grey;
-}
+
 .btn-route-change {
   margin-top: 10px;
   color: black;
@@ -34,7 +28,6 @@
   padding-right: 10px;
 }
 .card.indie img.small-img {
-  /* padding-right: 20px; */
   width: 100%;
 }
 @media (max-width: 900px) {

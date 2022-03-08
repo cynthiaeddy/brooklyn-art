@@ -6,27 +6,23 @@
 }
 
 .card {
-  /* padding: 30px; */
-  background: snow;
-  /* width: 30%; */
-  /* padding-ri;ght: 20px; */
+  background: black;
   padding: 30px 20px 20px 30px;
-  /* margin-right: 50px; */
 }
 
 .card.indie {
   height: fit-content;
-  margin-top: 105px;
+  margin-top: 80px;
   padding: 30px;
-  width: 30%;
+  width: 50%;
   max-width: 500px;
   padding-right: 20px;
 }
 .card.indie h6 {
-  color: grey;
+  color: white;
 }
 .btn-route-change {
-  color: black;
+  color: white;
   border: none;
   text-align: center;
   background: none;

@@ -10,7 +10,7 @@ const ArtCard = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
-  console.log(from.standard_size_url, 'in art card')
+  console.log(from.standard_size_url, 'in art card', from)
 
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]

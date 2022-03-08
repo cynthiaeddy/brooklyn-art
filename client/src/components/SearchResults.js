@@ -26,6 +26,13 @@ const SearchResults = props => {
   const refreshPage = () => {
     window.location.reload(false)
   }
+
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  }
   // console.log(props, 'props searchresults', artist)
 
   // useEffect(() => {
@@ -66,19 +73,14 @@ const SearchResults = props => {
       )
     })
   }
+
   return (
     <Masonry
-      breakpointCols={3}
+      breakpointCols={breakpointColumnsObj}
       className='my-masonry-grid'
       columnClassName='my-masonry-grid_column'>
       {renderCards()}
     </Masonry>
-    // <div className='masonry-container'>
-    //   {/* <div className='copy'></div> */}
-    //   <div className='wrapper'>
-    //     <div className='masonry bordered'>{renderCards()}</div>
-    //   </div>
-    // </div>
   )
 }
 

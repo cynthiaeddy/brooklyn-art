@@ -9,6 +9,7 @@ body {
   font-family: futura-pt, sans-serif;
   font-weight: 300;
   font-style: normal;
+  color: white;
 }
 
 .container {
@@ -23,11 +24,13 @@ body {
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 h1 {
@@ -49,11 +52,8 @@ h3 {
   margin-top: -10px;
   margin-bottom: 10px;
 }
-h4 {
-  color: white;
-}
+
 h5 {
-  color: white;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 11px;
@@ -63,6 +63,7 @@ h6 {
   margin-top: 4px;
   font-weight: 400;
   font-size: 12px;
+  color: white;
 }
 .img {
   width: 400px;
