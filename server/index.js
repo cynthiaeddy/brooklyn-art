@@ -1,10 +1,11 @@
+require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const axios = require('axios')
-require('dotenv').config()
-
 const PORT = process.env.PORT || 3005
-
 const app = express()
+const publicPath = path.join(__dirname, '..', 'public')
+app.use(express.static(publicPath))
 
 app.get(`/api/:term`, async (req, res, next) => {
   const api_key = process.env.API_KEY
@@ -44,6 +45,10 @@ app.get(`/api/:term`, async (req, res, next) => {
         res.json(null)
       }
     })
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'))
 })
 
 app.enable('trust proxy')
