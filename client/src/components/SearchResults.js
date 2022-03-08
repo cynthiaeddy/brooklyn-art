@@ -24,8 +24,9 @@ const SearchResults = props => {
   }, [props.term])
 
   const refreshPage = () => {
-    // window.location.reload(false)
-    navigate(-1)
+    window.location.reload(false)
+    //go back one page
+    // navigate(-1)
   }
 
   const breakpointColumnsObj = {
@@ -34,7 +35,6 @@ const SearchResults = props => {
     700: 2,
     500: 1,
   }
-  // console.log(props, 'props searchresults', artist)
 
   useEffect(() => {
     const handler = setTimeout(() => {
