@@ -1,4 +1,3 @@
-import { PromiseProvider } from 'mongoose'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../stylesheets/Card.css'
