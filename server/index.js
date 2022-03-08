@@ -7,7 +7,8 @@ const app = express()
 // const publicPath = path.join(__dirname, '..', 'public')
 // app.use(express.static(publicPath))
 
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join('client/build')))
+// app.use(express.static(path.join(__dirname, 'client/build')))
 
 app.get(`/api/:term`, async (req, res, next) => {
   const api_key = process.env.API_KEY
@@ -49,8 +50,11 @@ app.get(`/api/:term`, async (req, res, next) => {
     })
 })
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/client/build/index.html'))
+// })
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join('/client/build/index.html'))
 })
 
 app.enable('trust proxy')
