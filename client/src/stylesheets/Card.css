@@ -42,3 +42,16 @@
     width: 50%;
   }
 }
+/* //////// media queries /////////// */
+
+@media (max-width: 800px) {
+  .card.indie {
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .card.indie {
+    width: 90%;
+  }
+}
