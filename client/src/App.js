@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Search from './components/Search'
 import bgPic1 from './assets/turner.jpg'
-import bgPic2 from './assets/scribbles.jpg'
 import bgPic3 from './assets/bwphoto.jpg'
 import bgPic4 from './assets/nexthero.jpg'
 import bgPic5 from './assets/bw.jpg'
@@ -25,16 +24,7 @@ function App() {
 
   // send function to searchresults to trigger bkimg change
   const changeBg = () => {
-    const picArray = [
-      bgPic1,
-      bgPic2,
-      bgPic3,
-      bgPic4,
-      bgPic5,
-      bgPic6,
-      bgPic7,
-      bgPic8,
-    ]
+    const picArray = [bgPic1, bgPic3, bgPic4, bgPic5, bgPic6, bgPic7, bgPic8]
 
     const randomIndex = Math.floor(Math.random() * picArray.length)
     const selectbkImg = picArray[randomIndex]

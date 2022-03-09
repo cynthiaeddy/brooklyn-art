@@ -12,11 +12,10 @@
 
 .card.indie {
   height: fit-content;
-  margin-top: 80px;
+  margin-top: 110px;
   padding: 30px;
   width: 50%;
   max-width: 400px;
-  padding-right: 20px;
 }
 .card.indie h6 {
   color: black;
@@ -34,6 +33,12 @@
 .card.indie img.small-img {
   width: 100%;
 }
+.card.indie-wrapper {
+  padding: 0;
+}
+
+/* //////// media queries /////////// */
+
 @media (max-width: 900px) {
   .btn-route-change {
     margin-top: -5px;
@@ -42,16 +47,17 @@
     width: 50%;
   }
 }
-/* //////// media queries /////////// */
-
-@media (max-width: 800px) {
-  .card.indie {
-    width: 70%;
-  }
-}
 
 @media (max-width: 450px) {
   .card.indie {
+    max-height: 85%;
     width: 90%;
+    overflow: hidden;
+  }
+  .card.indie-wrapper {
+    overflow-y: auto;
+    height: 100px;
+    margin-top: 10px;
+    max-height: max-content;
   }
 }

@@ -48,6 +48,8 @@
   }
 }
 
+/* //////// media queries /////////// */
+
 @media (max-width: 1300px) {
   .type h1 {
     font-size: 62px;

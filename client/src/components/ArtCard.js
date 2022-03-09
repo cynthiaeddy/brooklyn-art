@@ -28,13 +28,15 @@ const ArtCard = () => {
         className='small-img'
         alt={titleName}
       />
-      <h2>{titleName}</h2>
-      <h3>{justName}</h3>
-      <h6>{cleanCaption}</h6>
-      <br />
-      <button onClick={routeChange} className='btn-route-change'>
-        {element}
-      </button>
+      <div className='card indie-wrapper '>
+        <h2>{titleName}</h2>
+        <h3>{justName}</h3>
+        <h6>{cleanCaption}</h6>
+        <br />
+        <button onClick={routeChange} className='btn-route-change'>
+          {element}
+        </button>
+      </div>
     </div>
   )
 }

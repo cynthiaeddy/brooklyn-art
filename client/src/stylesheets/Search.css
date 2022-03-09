@@ -15,6 +15,7 @@
   margin: auto;
   width: 200px;
   height: 160px;
+  color: white;
 }
 
 .search-word.no-results {
@@ -42,4 +43,15 @@ input:focus {
   background: white;
   color: black;
   border: none;
+}
+
+/* //////// media queries /////////// */
+
+@media (max-width: 450px) {
+  .search {
+    margin-top: 250px;
+  }
+  .search-word {
+    top: 175px;
+  }
 }
