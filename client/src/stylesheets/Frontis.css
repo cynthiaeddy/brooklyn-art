@@ -1,17 +1,17 @@
 .frontis {
   width: 100vw;
   height: 100vh;
-  background: black;
+  background: white;
   padding-top: 50px;
-  padding-left: 250px;
+  padding-left: 50px;
   display: flex;
   align-items: center;
 }
 .type h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  /* border-right: 0.15em solid orange;  */
+  border-right: 0.03em solid black;
   /* The typwriter cursor */
-  /* white-space: nowrap; */
+  white-space: nowrap;
   /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
@@ -19,12 +19,12 @@
 
   /*/////////cynthia's addition for styling/////////////*/
 
-  color: white;
+  color: black;
   font-family: itc-american-typewriter, serif;
   font-weight: 300;
   letter-spacing: 1px;
-  font-size: 120px;
-  text-align: left;
+  font-size: 70px;
+  text-align: center;
 }
 
 /* The typing effect */
@@ -44,47 +44,45 @@
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: black;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
+  .type h1 {
+    font-size: 62px;
+  }
   .frontis {
-    padding-left: 100px;
+    padding-left: 25px;
+    padding-top: 0;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1150px) {
+  .type h1 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 950px) {
   .frontis {
-    padding-left: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .type h1 {
+    border-right: 0em solid white;
   }
 }
 
 @media (max-width: 600px) {
-  .type h1 {
-    font-size: 85px;
+  .frontis {
+    padding-left: 100px;
+    padding-right: 100px;
   }
+}
+@media (max-width: 450px) {
   .frontis {
     padding-left: 50px;
-  }
-}
-
-@media (max-width: 450px) {
-  .type h1 {
-    font-size: 65px;
-  }
-  .frontis {
-    padding-left: 30px;
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 300px) {
-  .type h1 {
-    font-size: 55px;
-  }
-  .frontis {
-    padding-left: 30px;
-    padding-right: 0;
+    padding-right: 50px;
   }
 }

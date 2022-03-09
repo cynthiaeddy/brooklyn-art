@@ -4,6 +4,7 @@ import '../stylesheets/Card.css'
 
 const ArtistCard = props => {
   const bgImage = ''
+  const { changeBg } = props
 
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]
@@ -13,7 +14,7 @@ const ArtistCard = props => {
 
   const deleteNameSpace = title.replace(/\s+/g, '')
 
-  useEffect(_ => props.changeBg(bgImage), [bgImage])
+  useEffect(_ => changeBg(bgImage), [bgImage])
   return (
     <>
       <div className='card'>

@@ -1,20 +1,17 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
+import Masonry from 'react-masonry-css'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
 import '../stylesheets/Masonry.css'
-import Masonry from 'react-masonry-css'
-import { useNavigate } from 'react-router-dom'
 
 const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
 
 const SearchResults = props => {
-  const navigate = useNavigate()
   const [artist, setArtist] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const term = props.term
@@ -25,8 +22,6 @@ const SearchResults = props => {
 
   const refreshPage = () => {
     window.location.reload(false)
-    //go back one page
-    // navigate(-1)
   }
 
   const breakpointColumnsObj = {
@@ -36,19 +31,9 @@ const SearchResults = props => {
     500: 1,
   }
 
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setLoading(false)
-    }, 500)
-
-    return () => {
-      clearTimeout(handler)
-    }
-  }, [])
-
   const firstArtObj = []
   const renderCards = () => {
-    if ((!loading && artist === '0 results found') || artist.length < 3) {
+    if (artist === '0 results found' || artist.length < 3) {
       return (
         <h5 className='search-word no-results'>
           0 results found

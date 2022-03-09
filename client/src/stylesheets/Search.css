@@ -39,7 +39,7 @@ input:focus {
 }
 .btn-home {
   margin-top: 15px;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   border: none;
 }
