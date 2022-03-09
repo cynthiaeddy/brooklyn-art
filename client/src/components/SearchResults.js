@@ -48,7 +48,7 @@ const SearchResults = props => {
 
   const firstArtObj = []
   const renderCards = () => {
-    if ((!loading && artist === null) || artist.length < 3) {
+    if ((!loading && artist === '0 results found') || artist.length < 3) {
       return (
         <h5 className='search-word no-results'>
           0 results found
