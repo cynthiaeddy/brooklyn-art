@@ -6,7 +6,7 @@
   position: absolute;
   z-index: 40;
   left: 50%;
-  top: 28%;
+  top: 35%;
   transform: translate(-50%, -45%);
   visibility: hidden;
 }
@@ -32,6 +32,7 @@
   font-size: 20px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 .navbar {
   position: absolute;
