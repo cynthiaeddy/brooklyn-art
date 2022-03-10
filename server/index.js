@@ -50,10 +50,12 @@ app.get(`/api/:term`, async (req, res, next) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join(__dirname + '/app/client/build/index.html'))
 })
 app.enable('trust proxy')
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
 })
+
+// res.sendFile(path.resolve(__dirname + '/app/client/build/index.html'))

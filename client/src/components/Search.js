@@ -5,7 +5,7 @@ import '../stylesheets/Search.css'
 
 const Search = props => {
   const [searchTerm, setSearchTerm] = useState('')
-  const debouncedSearchTerm = Debounce(searchTerm, 1000)
+  const debouncedSearchTerm = Debounce(searchTerm, 1500)
 
   return (
     <div className='search'>

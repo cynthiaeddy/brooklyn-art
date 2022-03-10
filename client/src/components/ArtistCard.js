@@ -14,7 +14,7 @@ const ArtistCard = props => {
 
   const deleteNameSpace = title.replace(/\s+/g, '')
 
-  useEffect(_ => changeBg(bgImage), [bgImage])
+  useEffect(_ => changeBg(bgImage), [changeBg])
   return (
     <>
       <div className='card'>
