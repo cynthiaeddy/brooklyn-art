@@ -51,7 +51,7 @@
 @media (max-width: 450px) {
   .card.indie {
     max-height: 85%;
-    width: 90%;
+    width: 80%;
     overflow: hidden;
   }
   .card.indie-wrapper {
@@ -65,13 +65,18 @@
   .card.indie {
     margin-top: 80px;
   }
+  .card.indie-wrapper {
+    max-height: inherit;
+    height: 200px;
+  }
 }
 @media (max-width: 450px) and (min-height: 701px) {
   .card.indie {
     margin-top: 80px;
+    height: fit-content;
   }
   .card.indie-wrapper {
-    height: 200px;
-    min-height: fit-content;
+    height: revert;
+    max-height: 200px;
   }
 }
