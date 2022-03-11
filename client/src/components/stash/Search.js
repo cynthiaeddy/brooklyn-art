@@ -39,8 +39,6 @@ const Search = props => {
             term={debouncedSearchTerm}
             changeBg={props.changeBg}
             searchTerm={searchTerm}
-            setArtist={props.setArtist}
-            artist={props.artist}
           />
         </>
       )}

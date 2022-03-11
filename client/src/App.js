@@ -13,10 +13,14 @@ import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
 import Frontis from './components/Frontis'
+import NotFound from './components/NotFound'
+import SearchResults from './components/SearchResults'
 
 function App() {
   const [bgImage, setBgImage] = useState('')
   const [introOpen, setIntroOpen] = useState(false)
+  const [artist, setArtist] = useState([])
+  console.log('in app', artist)
 
   const introOpenOnClick = () => {
     setIntroOpen(!introOpen)
@@ -34,9 +38,31 @@ function App() {
 
   let routes = (
     <Routes>
-      <Route exact path='/' element={<Search changeBg={changeBg} />} />
-      <Route path='/:title' element={<ArtCard />} />
-      <Route path='*' element={{ Error }} />
+      <Route
+        exact
+        path='*'
+        element={
+          <Search changeBg={changeBg} setArtist={setArtist} artist={artist} />
+        }
+      />
+
+      {/* <Route exact path='/' element={<Search changeBg={changeBg} />} /> */}
+      {/* <Route exact path="/">
+  {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
+</Route>
+       */}
+      {/* <Route
+        path='/search'
+        element={
+          artist === '0 results found' || artist.length < 3 ? (
+            <NotFound />
+          ) : (
+            <SearchResults />
+          )
+        }
+      /> */}
+      {/* <Route path='/:title' element={<ArtCard />} /> */}
+      {/* <Route path='*' element={{ Error }} /> */}
     </Routes>
   )
   return (
