@@ -11,11 +11,13 @@
 }
 
 .card.indie {
-  height: fit-content;
   margin-top: 80px;
   padding: 30px;
   width: 50%;
   max-width: 400px;
+  overflow-y: auto;
+  height: fit-content;
+  max-height: 90%;
 }
 .card.indie h6 {
   color: black;

@@ -12,7 +12,10 @@ const Search = props => {
       {!debouncedSearchTerm ? (
         <>
           <div className='search-word'>
-            <h5>enter artist name </h5>
+            <h5>
+              search by <br />
+              artist name{' '}
+            </h5>
             <div className='search-word-input'>
               <input
                 type='text'
