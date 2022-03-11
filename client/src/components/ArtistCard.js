@@ -5,6 +5,7 @@ import '../stylesheets/Card.css'
 const ArtistCard = props => {
   const bgImage = ''
   const { changeBg } = props
+  console.log('in artist card', props)
 
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]

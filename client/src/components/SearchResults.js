@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import NotFound from './NotFound'
-import FakeResults from './FakeResults'
+import ArtistResults from './ArtistResults'
 
 import '../stylesheets/Search.css'
 import '../stylesheets/Masonry.css'
-import { Route, Routes } from 'react-router-dom'
 
 const axios = require('axios')
 
@@ -27,7 +27,7 @@ const SearchResults = props => {
             props.artist === '0 results found' || props.artist.length < 3 ? (
               <NotFound />
             ) : (
-              <FakeResults artist={props.artist} changeBg={props.changeBg} />
+              <ArtistResults artist={props.artist} changeBg={props.changeBg} />
             )
           }
         />

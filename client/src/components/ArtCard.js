@@ -3,14 +3,17 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import '../stylesheets/Card.css'
+import { useParams } from 'react-router'
 
 const element = <FontAwesomeIcon icon={faHome} />
 
 const ArtCard = () => {
+  const artCard = useParams().art
+
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
-  console.log(from.standard_size_url, 'in art card', from)
+  console.log(from.standard_size_url, 'in art card', from, 'artCard', artCard)
 
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]

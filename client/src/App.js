@@ -61,7 +61,7 @@ function App() {
           )
         }
       /> */}
-      {/* <Route path='/:title' element={<ArtCard />} /> */}
+      <Route path='/:art' element={<ArtCard />} />
       {/* <Route path='*' element={{ Error }} /> */}
     </Routes>
   )

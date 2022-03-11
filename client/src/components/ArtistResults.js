@@ -1,10 +1,9 @@
-import React from 'react'
 import Masonry from 'react-masonry-css'
 import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
 import '../stylesheets/Masonry.css'
 
-const FakeResults = props => {
+const ArtistResults = props => {
   console.log(props, 'in fake results')
 
   const breakpointColumnsObj = {
@@ -41,4 +40,4 @@ const FakeResults = props => {
   )
 }
 
-export default FakeResults
+export default ArtistResults
