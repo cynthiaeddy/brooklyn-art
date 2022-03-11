@@ -83,7 +83,7 @@ const SearchResults = props => {
       in search results
       <Routes>
         <Route
-          path='/search'
+          path='/'
           element={
             props.artist === '0 results found' || props.artist.length < 3 ? (
               <NotFound />
@@ -92,6 +92,7 @@ const SearchResults = props => {
             )
           }
         />
+        )
       </Routes>
     </>
     // <Masonry
@@ -104,3 +105,23 @@ const SearchResults = props => {
 }
 
 export default SearchResults
+{
+  /* <Route
+path='/'
+element={
+  props.artist === '0 results found' || props.artist.length < 3 ? (
+    <NotFound />
+  ) : (
+    <FakeResults />
+  )
+}
+/> */
+}
+{
+  /* <Routes>
+{props.artist === '0 results found' || props.artist.length < 3} ?
+<Route path='/' element={<NotFound />} />
+) : (
+<Route path='/' element={<FakeResults />} />) }
+</Routes> */
+}
