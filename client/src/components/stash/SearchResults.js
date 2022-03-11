@@ -56,7 +56,7 @@ const SearchResults = props => {
           img={art.largest_derivative_url}
           smImg={art.standard_size_url}
           art={art}
-          changeBg={props.changeBg}
+          // changeBg={props.changeBg}
         />
       )
     })
