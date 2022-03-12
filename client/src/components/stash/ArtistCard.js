@@ -8,13 +8,9 @@ const ArtistCard = props => {
 
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const name = captionSplit[0]
-  const justName = captionSplit[0]
-    .split(' (')[0]
-    .toLowerCase()
-    .replace(/\s+/g, '')
   const titleName = captionSplit[1].split(',')[0]
   const titleYear = captionSplit[1].split(',')[1]
-  const title = captionSplit[1].split('(')[0].split(',')[0]
+  const title = captionSplit[1].split('(')[0]
 
   const deleteNameSpace = title.replace(/\s+/g, '')
 
@@ -23,8 +19,7 @@ const ArtistCard = props => {
     <>
       <div className='card'>
         <Link
-          to={`/${justName}/${deleteNameSpace.toLowerCase()}`}
-          // to={`/${deleteNameSpace.toLowerCase()}`}
+          to={`/${deleteNameSpace.toLowerCase()}`}
           state={{ from: props.art }}>
           <img
             src={`https://${props.img}`}

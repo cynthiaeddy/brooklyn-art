@@ -5,14 +5,17 @@ import '../stylesheets/Search.css'
 
 const Search = props => {
   const [searchTerm, setSearchTerm] = useState('')
-  const debouncedSearchTerm = Debounce(searchTerm, 1000)
+  const debouncedSearchTerm = Debounce(searchTerm, 1500)
 
   return (
     <div className='search'>
       {!debouncedSearchTerm ? (
         <>
           <div className='search-word'>
-            <h5>enter artist name </h5>
+            <h5>
+              search by <br />
+              artist name{' '}
+            </h5>
             <div className='search-word-input'>
               <input
                 type='text'

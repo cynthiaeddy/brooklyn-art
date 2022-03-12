@@ -35,7 +35,7 @@ function App() {
   let routes = (
     <Routes>
       <Route exact path='/' element={<Search changeBg={changeBg} />} />
-      <Route path='/:title' element={<ArtCard />} />
+      <Route path='/:arist/:title' element={<ArtCard />} />
       <Route path='*' element={{ Error }} />
     </Routes>
   )
