@@ -59,20 +59,21 @@
     padding-top: 0;
   }
 }
-
-@media (max-width: 1150px) {
+/*
+@media (max-width: 1000px) {
   .type h1 {
     white-space: normal;
   }
-}
+} */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .frontis {
     padding-left: 150px;
     padding-right: 150px;
   }
   .type h1 {
     border-right: 0em solid white;
+    white-space: normal;
   }
 }
 
