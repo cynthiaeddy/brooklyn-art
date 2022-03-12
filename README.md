@@ -17,6 +17,9 @@ Your browser will automatically launch the app to its home page.
 
 You can shut down both servers by typing Control C in the terminal window where they are running.
 
+#### To-dos
+The museum's api initially shows a maxium 12 images. If the query consists of more, have a button located at bottom of page to view the next 12.
+
 ## Built with
 • React <br/>
 • Express <br/>
