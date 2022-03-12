@@ -7,24 +7,22 @@ import { useParams } from 'react-router'
 
 const element = <FontAwesomeIcon icon={faHome} />
 
-const ArtCard = props => {
-  const artCard = useParams().artCard
+const ArtCard = () => {
+  const artCard = useParams().art
 
   const location = useLocation()
   const navigate = useNavigate()
-  // console.log('in art card', props)
   const { from } = location.state
-  console.log(from.standard_size_url, 'in art card', from)
+  console.log(from.standard_size_url, 'in art card', from, 'artCard', artCard)
 
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]
   const justName = cleanCaption[0].split(' (')[0]
 
   const routeChange = () => {
-    let path = '/'
-    navigate(path)
+    // let path = '/'
+    navigate(-1)
   }
-  // console.log(props)
 
   return (
     <div className='card indie'>
@@ -34,7 +32,7 @@ const ArtCard = props => {
         alt={titleName}
       />
       <div className='card indie-wrapper '>
-        <h2>{props.titleName}</h2>
+        <h2>{titleName}</h2>
         <h3>{justName}</h3>
         <h6>{cleanCaption}</h6>
         <br />

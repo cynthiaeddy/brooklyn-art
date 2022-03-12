@@ -12,9 +12,10 @@ import bgPic8 from './assets/wheels.jpg'
 import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
+import ArtistCard from './components/ArtistCard'
+import ArtistResults from './components/ArtistResults'
+
 import Frontis from './components/Frontis'
-import NotFound from './components/NotFound'
-import SearchResults from './components/SearchResults'
 
 function App() {
   const [bgImage, setBgImage] = useState('')
@@ -45,24 +46,8 @@ function App() {
           <Search changeBg={changeBg} setArtist={setArtist} artist={artist} />
         }
       />
-
-      {/* <Route exact path='/' element={<Search changeBg={changeBg} />} /> */}
-      {/* <Route exact path="/">
-  {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />}
-</Route>
-       */}
-      {/* <Route
-        path='/search'
-        element={
-          artist === '0 results found' || artist.length < 3 ? (
-            <NotFound />
-          ) : (
-            <SearchResults />
-          )
-        }
-      /> */}
-      {/* <Route path='/:title' element={<ArtCard />} /> */}
-      {/* <Route path='*' element={{ Error }} /> */}
+      {/* <Route exact path='/:artist' element={<ArtistResults />} /> */}
+      <Route exact path='/:artist/:title' element={<ArtCard />} />
     </Routes>
   )
   return (
