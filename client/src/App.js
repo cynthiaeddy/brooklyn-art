@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Search from './components/Search'
 import bgPic1 from './assets/turner.jpg'
 import bgPic3 from './assets/bwphoto.jpg'
@@ -35,7 +35,7 @@ function App() {
   let routes = (
     <Routes>
       <Route exact path='/' element={<Search changeBg={changeBg} />} />
-      <Route path='/:arist/:title' element={<ArtCard />} />
+      <Route path='/:artist/:title' element={<ArtCard />} />
       <Route path='*' element={{ Error }} />
     </Routes>
   )
