@@ -1,4 +1,4 @@
-# The Brooklyn Museum Art Project
+# The Brooklyn Museum Project
 is an app where you can search the museum's vast collection by the artist's name.
 
 ## Instructions
