@@ -57,5 +57,3 @@ app.enable('trust proxy')
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
 })
-
-// res.sendFile(path.resolve(__dirname + '/app/client/build/index.html'))
