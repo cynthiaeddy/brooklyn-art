@@ -41,7 +41,6 @@ app.get(`/api/:term`, async (req, res, next) => {
             })
           })
       } else {
-        console.log('nope')
         res.json('0 results found')
       }
     })

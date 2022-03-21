@@ -52,7 +52,7 @@ const SearchResults = props => {
   return (
     <>
       {loading && <h5 className='loading'>loading...</h5>}
-      {artist.length < 3 && !loading ? (
+      {artist === '0 results found' || (artist.length < 3 && !loading) ? (
         <div className='no-results'>
           <h5> 0 results found </h5>
           <button className='btn-home' onClick={refreshPage}>
