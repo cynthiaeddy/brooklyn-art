@@ -18,13 +18,7 @@
   height: 160px;
   color: white;
 }
-.hidden {
-  display: none;
-}
 
-.search-word.no-results {
-  z-index: 200;
-}
 input {
   text-align: center;
   width: 100%;
@@ -54,10 +48,6 @@ input:focus {
   top: 15%;
   transform: translate(-50%, -50%);
   color: white;
-}
-.ad {
-  position: absolute;
-  font-size: 100px;
 }
 
 /* //////// media queries /////////// */

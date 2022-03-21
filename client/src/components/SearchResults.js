@@ -22,14 +22,6 @@ const SearchResults = props => {
     })
   }, [props.term])
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //   }, 1000)
-  //   return () => {
-  //     clearTimeout(timer)
-  //   }
-  // }, [])
-
   const refreshPage = () => {
     window.location.reload(false)
   }
@@ -71,9 +63,8 @@ const SearchResults = props => {
         <>
           {!loading && (
             <>
-              {' '}
               <div className='search-word'>
-                <h5>Your Results </h5>{' '}
+                <h5>Your Results </h5>
                 <div className='search-word-input'>
                   <h3>{props.searchTerm}</h3>
                 </div>
