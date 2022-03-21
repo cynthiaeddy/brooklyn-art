@@ -12,13 +12,23 @@ const element = <FontAwesomeIcon icon={faHome} />
 
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const term = props.term
     axios.get(`api/${term}`).then(response => {
       setArtist(response.data)
+      setLoading(false)
     })
   }, [props.term])
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //   }, 1000)
+  //   return () => {
+  //     clearTimeout(timer)
+  //   }
+  // }, [])
 
   const refreshPage = () => {
     window.location.reload(false)
@@ -30,21 +40,8 @@ const SearchResults = props => {
     700: 2,
     500: 1,
   }
-
-  const firstArtObj = []
   const renderCards = () => {
-    if (artist === '0 results found' || artist.length < 3) {
-      return (
-        <h5 className='search-word no-results'>
-          0 results found
-          <br />
-          <button className='btn-home' onClick={refreshPage}>
-            {element}
-          </button>
-        </h5>
-      )
-    }
-
+    const firstArtObj = []
     artist.map(artData => firstArtObj.push(artData.data[0]))
     return firstArtObj.map(art => {
       return (
@@ -61,12 +58,37 @@ const SearchResults = props => {
   }
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className='my-masonry-grid'
-      columnClassName='my-masonry-grid_column'>
-      {renderCards()}
-    </Masonry>
+    <>
+      {loading && <h5 className='loading'>loading...</h5>}
+      {artist.length < 3 && !loading ? (
+        <div className='no-results'>
+          <h5> 0 results found </h5>
+          <button className='btn-home' onClick={refreshPage}>
+            {element}
+          </button>
+        </div>
+      ) : (
+        <>
+          {!loading && (
+            <>
+              {' '}
+              <div className='search-word'>
+                <h5>Your Results </h5>{' '}
+                <div className='search-word-input'>
+                  <h3>{props.searchTerm}</h3>
+                </div>
+              </div>
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className='my-masonry-grid'
+                columnClassName='my-masonry-grid_column'>
+                {renderCards()}
+              </Masonry>
+            </>
+          )}
+        </>
+      )}
+    </>
   )
 }
 

@@ -28,12 +28,12 @@ const Search = props => {
         </>
       ) : (
         <>
-          <div className='search-word'>
+          {/* <div className='search-word'>
             <h5>Your Results </h5>{' '}
             <div className='search-word-input'>
               <h3>{searchTerm}</h3>
             </div>
-          </div>
+          </div> */}
 
           <SearchResults
             term={debouncedSearchTerm}

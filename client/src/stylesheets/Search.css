@@ -5,7 +5,8 @@
   width: 80%;
   max-width: 1200px;
 }
-.search-word {
+.search-word,
+.no-results {
   position: absolute;
   left: 50%;
   top: 20%;
@@ -17,9 +18,12 @@
   height: 160px;
   color: white;
 }
+.hidden {
+  display: none;
+}
 
 .search-word.no-results {
-  padding-top: 60px;
+  z-index: 200;
 }
 input {
   text-align: center;
@@ -43,6 +47,17 @@ input:focus {
   background: white;
   color: black;
   border: none;
+}
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.ad {
+  position: absolute;
+  font-size: 100px;
 }
 
 /* //////// media queries /////////// */
