@@ -38,10 +38,11 @@ input:focus {
 }
 .btn-home {
   margin-top: 15px;
-  background: white;
-  color: black;
+  background: black;
+  color: white;
   border: none;
 }
+
 .loading {
   position: absolute;
   left: 50%;

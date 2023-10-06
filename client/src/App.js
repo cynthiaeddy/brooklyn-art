@@ -13,6 +13,8 @@ import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
 import Frontis from './components/Frontis'
+import ArtistCard from './components/ArtistCard'
+
 
 function App() {
   const [bgImage, setBgImage] = useState('')
@@ -35,6 +37,7 @@ function App() {
   let routes = (
     <Routes>
       <Route exact path='/' element={<Search changeBg={changeBg} />} />
+      <Route path='/:artist' element={<ArtistCard changeBg={changeBg}/> }/ >
       <Route path='/:artist/:title' element={<ArtCard />} />
       <Route path='*' element={{ Error }} />
     </Routes>

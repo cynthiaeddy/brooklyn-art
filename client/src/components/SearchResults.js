@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import Masonry from 'react-masonry-css'
 import ArtistCard from './ArtistCard'
+import Artist from './Artist'
 import '../stylesheets/Search.css'
 import '../stylesheets/Masonry.css'
+
 
 const axios = require('axios')
 
@@ -13,6 +16,7 @@ const element = <FontAwesomeIcon icon={faHome} />
 const SearchResults = props => {
   const [artist, setArtist] = useState([])
   const [loading, setLoading] = useState(true)
+  console.log(props, 'props in search results')
 
   useEffect(() => {
     const term = props.term
@@ -25,6 +29,8 @@ const SearchResults = props => {
   const refreshPage = () => {
     window.location.reload(false)
   }
+  const navigate = useNavigate()
+
 
   const breakpointColumnsObj = {
     default: 4,
@@ -35,6 +41,7 @@ const SearchResults = props => {
   const renderCards = () => {
     const firstArtObj = []
     artist.map(artData => firstArtObj.push(artData.data[0]))
+    console.log(artist, firstArtObj,'artist, firstArtObj')
     return firstArtObj.map(art => {
       return (
         <ArtistCard
@@ -67,14 +74,12 @@ const SearchResults = props => {
                 <h5>Your Results </h5>
                 <div className='search-word-input'>
                   <h3>{props.searchTerm}</h3>
+                  </div>
+                  <button onClick={refreshPage} className='btn-home '>{element}</button>
                 </div>
-              </div>
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className='my-masonry-grid'
-                columnClassName='my-masonry-grid_column'>
-                {renderCards()}
-              </Masonry>
+                <Navigate
+                  to={`/${props.searchTerm}`} state={{ from: props.term }}/>
+
             </>
           )}
         </>

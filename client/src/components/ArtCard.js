@@ -10,15 +10,13 @@ const ArtCard = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
-  console.log(from.standard_size_url, 'in art card', from)
-
+console.log(from, 'from in art card')
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]
   const justName = cleanCaption[0].split(' (')[0]
 
   const routeChange = () => {
-    let path = '/'
-    navigate(path)
+    navigate('/')
   }
 
   return (
@@ -36,6 +34,7 @@ const ArtCard = () => {
         <button onClick={routeChange} className='btn-route-change'>
           {element}
         </button>
+        <button onClick={navigate(-1)}>go back</button>
       </div>
     </div>
   )
