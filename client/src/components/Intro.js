@@ -7,9 +7,9 @@ import bgPic6 from '../assets/greatfoto.jpg'
 import bgPic7 from '../assets/color.jpg'
 import bgPic8 from '../assets/wheels.jpg'
 
-const Intro = props => {
+const Intro = ({introOpen}) => {
   let classes = ['intro']
-  if (props.introOpen) {
+  if (introOpen) {
     classes = ['intro open']
   }
 

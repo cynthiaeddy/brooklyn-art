@@ -1,15 +1,15 @@
 import '../stylesheets/Intro&Nav.css'
 
-const Navbar = props => {
+const Navbar = ({introOpen, introOpenOnClick}) => {
   let btnChange
-  if (!props.introOpen) {
+  if (!introOpen) {
     btnChange = '?'
   } else {
     btnChange = 'X'
   }
   return (
     <div className='navbar'>
-      <button className='btn-navbar' onClick={props.introOpenOnClick}>
+      <button className='btn-navbar' onClick={introOpenOnClick}>
         {btnChange}
       </button>
     </div>

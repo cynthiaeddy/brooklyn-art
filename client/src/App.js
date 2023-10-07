@@ -13,8 +13,10 @@ import Intro from './components/Intro'
 import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
 import Frontis from './components/Frontis'
+import ArtistContainer from './components/ArtistContainer'
 
-function App() {
+
+const App = () => {
   const [bgImage, setBgImage] = useState('')
   const [introOpen, setIntroOpen] = useState(false)
 
@@ -34,8 +36,9 @@ function App() {
 
   let routes = (
     <Routes>
-      <Route exact path='/' element={<Search changeBg={changeBg} />} />
-      <Route path='/:artist/:title' element={<ArtCard />} />
+      <Route exact path='/' element={<Search />} />
+      <Route path='/:artist' element={<ArtistContainer changeBg={changeBg}/> }/ >
+      <Route path='/:artist/:title' element={<ArtCard changeBg={changeBg}/>} />
       <Route path='*' element={{ Error }} />
     </Routes>
   )

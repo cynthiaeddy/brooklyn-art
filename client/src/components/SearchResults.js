@@ -1,53 +1,30 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Navigate} from 'react-router-dom'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
-import Masonry from 'react-masonry-css'
-import ArtistCard from './ArtistCard'
 import '../stylesheets/Search.css'
-import '../stylesheets/Masonry.css'
+
 
 const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
 
-const SearchResults = props => {
+const SearchResults = ({term, searchTerm}) => {
   const [artist, setArtist] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const term = props.term
+
     axios.get(`api/${term}`).then(response => {
       setArtist(response.data)
       setLoading(false)
     })
-  }, [props.term])
+  }, [term])
 
   const refreshPage = () => {
     window.location.reload(false)
   }
 
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
-  }
-  const renderCards = () => {
-    const firstArtObj = []
-    artist.map(artData => firstArtObj.push(artData.data[0]))
-    return firstArtObj.map(art => {
-      return (
-        <ArtistCard
-          caption={art.caption}
-          key={art.id}
-          img={art.largest_derivative_url}
-          smImg={art.standard_size_url}
-          art={art}
-          changeBg={props.changeBg}
-        />
-      )
-    })
-  }
 
   return (
     <>
@@ -66,15 +43,12 @@ const SearchResults = props => {
               <div className='search-word'>
                 <h5>Your Results </h5>
                 <div className='search-word-input'>
-                  <h3>{props.searchTerm}</h3>
+                  <h3>{searchTerm}</h3>
+                  </div>
+                  <button onClick={refreshPage} className='btn-home '>{element}</button>
                 </div>
-              </div>
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className='my-masonry-grid'
-                columnClassName='my-masonry-grid_column'>
-                {renderCards()}
-              </Masonry>
+                <Navigate
+                  to={`/${searchTerm}`} state={ [artist, searchTerm ]}/>
             </>
           )}
         </>
