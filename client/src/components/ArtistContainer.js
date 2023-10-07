@@ -1,35 +1,25 @@
-import { useEffect, useState } from 'react'
 import Masonry from 'react-masonry-css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import ArtistCard from './ArtistCard'
-import { Link } from 'react-router-dom'
 import { useNavigate, useLocation } from 'react-router-dom'
 import '../stylesheets/Card.css'
 import '../stylesheets/Masonry.css'
 import '../stylesheets/Search.css'
-const axios = require('axios')
-
 
 const element = <FontAwesomeIcon icon={faHome} />
 
-
-
-const ArtistContainer = props => {
+const ArtistContainer = ({changeBg}) => {
 
   const {state}  = useLocation()
   const navigate = useNavigate()
-  const bgImage = ''
-  const { changeBg } = props
-
 
   const artistName = state[1]
   const artistArray = state[0]
 
-  console.log(artistArray, 'artistArray in container')
-
   const navigateHome = () => {
-  navigate('/')
+    navigate('/')
+    changeBg()
 }
 
   const breakpointColumnsObj = {
@@ -48,9 +38,7 @@ const ArtistContainer = props => {
           key={art.id}
           img={art.largest_derivative_url}
           smImg={art.standard_size_url}
-          art={art}
-          changeBg={props.changeBg}
-        />
+          art={art}/>
       )
     })
   }

@@ -1,12 +1,9 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../stylesheets/Card.css'
 
 
 const ArtistCard = props => {
 
-  const bgImage = ''
-  const { changeBg } = props
 
 
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
@@ -19,7 +16,7 @@ const ArtistCard = props => {
 
   const deleteNameSpace = title.replace(/\s+/g, '')
 
-  useEffect(_ => changeBg(bgImage), [changeBg])
+  // useEffect(_ => changeBg(bgImage), [changeBg])
   return (
     <>
 

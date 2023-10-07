@@ -30,6 +30,7 @@ const Search = () => {
             term={debouncedSearchTerm}
             searchTerm={searchTerm}
           />
+
       )}
     </div>
   )

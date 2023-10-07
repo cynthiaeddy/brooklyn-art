@@ -8,7 +8,7 @@ import '../stylesheets/Card.css'
 const element = <FontAwesomeIcon icon={faHome} />
 const goaway = <FontAwesomeIcon icon={ faCircleArrowLeft } />
 
-const ArtCard = () => {
+const ArtCard = ({changeBg}) => {
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
@@ -19,6 +19,7 @@ const ArtCard = () => {
 
   const routeChange = () => {
     navigate('/')
+    changeBg()
   }
   const goBack = () => {
     navigate(-1)
