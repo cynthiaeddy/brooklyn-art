@@ -59,8 +59,34 @@ const SearchResults = props => {
   // }
 
   return (
-  <Navigate
-  to={`/${props.searchTerm}`} state={{ from: props.term  }}/>
+    <>
+      {loading && <h5 className='loading'>loading...</h5>}
+      {artist === '0 results found' || (artist.length < 3 && !loading) ? (
+        <div className='no-results'>
+          <h5> 0 results found </h5>
+          <button className='btn-home' onClick={refreshPage}>
+            {element}
+          </button>
+        </div>
+      ) : (
+        <>
+          {!loading && (
+            <>
+              <div className='search-word'>
+                <h5>Your Results </h5>
+                <div className='search-word-input'>
+                  <h3>{props.searchTerm}</h3>
+                  </div>
+                  <button onClick={refreshPage} className='btn-home '>{element}</button>
+                </div>
+                <Navigate
+                  to={`/${props.searchTerm}`} state={ [artist, props.searchTerm ]}/>
+
+            </>
+          )}
+        </>
+      )}
+    </>
   )
 }
 

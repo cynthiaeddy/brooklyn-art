@@ -80,7 +80,7 @@ const SearchResults = props => {
                   <button onClick={refreshPage} className='btn-home '>{element}</button>
                 </div>
                 <Navigate
-                  to={`/${props.searchTerm}`} state={{ from: artist,  }}/>
+                  to={`/${props.searchTerm}`} state={ [artist, props.searchTerm ]}/>
 
             </>
           )}

@@ -1,25 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useNavigate, useLocation } from 'react-router-dom'
 import '../stylesheets/Card.css'
-const axios = require('axios')
 
 
 const ArtistCard = props => {
-  const [artist, setArtist] = useState([])
-  const [loading, setLoading] = useState(true)
-  const location = useLocation()
-  const navigate = useNavigate()
-  const { from } = location.state
+
   const bgImage = ''
   const { changeBg } = props
-  console.log(from, changeBg, props, 'from in artist card')
-  console.log(props,props.caption,'props, in artist card')
-  console.log(artist, 'artist in artist card')
+
 
   const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
 
-  console.log(captionSplit, 'captionSplit')
   const name = captionSplit[0]
   const justName = captionSplit[0]
     .split(' (')[0]
@@ -37,7 +28,7 @@ const ArtistCard = props => {
 
       <div className='card'>
         <Link
-          to={`/${justName}/${deleteNameSpace.toLowerCase()}`}
+          to={`/${props.foundArtist}/${deleteNameSpace.toLowerCase()}`}
           state={{ from: props.art }}>
           <img
             src={`https://${props.img}`}

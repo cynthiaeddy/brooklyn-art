@@ -16,35 +16,32 @@ const element = <FontAwesomeIcon icon={faHome} />
 
 const ArtistContainer = props => {
 
-  const location = useLocation()
+  const {state}  = useLocation()
   const navigate = useNavigate()
-  const { from } = location.state
+  // const { from } = location.state
   const bgImage = ''
   const { changeBg } = props
   const [artist, setArtist] = useState([])
   const [loading, setLoading] = useState(true)
-  console.log(from, 'from in ArtistContainer card')
+  console.log(state, 'from, state in ArtistContainer card')
 
-  const foundArtist = from
-  useEffect(() => {
-    // const term = props.term
-    axios.get(`api/${foundArtist}`).then(response => {
-      setArtist(response.data)
-      setLoading(false)
-    })
-  }, [foundArtist])
+  const artistName = state[1]
+  const artistArray = state[0]
 
-  console.log(foundArtist, artist, 'foundArtist, artist')
-  // console.log(location, props.searchTerm, 'location, props.searchTerm in container')
-  // console.log(props.searchTerm, 'props.searchTerm,, props.searchTerm in container')
+  console.log(artistName, artistArray[0], artistArray[0].data,'artistName ,artistArray[0], artistArray[0].data,state in ArtistContainer card')
 
 
+  // const foundArtist = from
+  // useEffect(() => {
+  //   axios.get(`api/${state[0]}`).then(response => {
+  //     setArtist(response.data)
+  //     setLoading(false)
+  //   })
+  // }, [])
 
-  const refreshPage = () => {
-    window.location.reload(false)
-  }
-  console.log(ArtistContainer, 'ArtistContainer in ArtistContainer card')
-
+  const navigateHome = () => {
+  navigate('/')
+}
 
   const breakpointColumnsObj = {
     default: 4,
@@ -53,10 +50,18 @@ const ArtistContainer = props => {
     500: 1,
   }
   const renderCards = () => {
+    console.log(artistArray[0], artistArray[0].data, 'artistArray[0] in render cards')
+
     const firstArtObj = []
-    artist.map(artData => firstArtObj.push(artData.data[0]))
-    console.log( firstArtObj,'ArtistContainer, firstArtObj')
+    artistArray[0].data.map(artData => {
+      console.log(artData, artData[0], 'artData, artData[0]')
+    return firstArtObj.push(artData)
+    })
+    console.log(firstArtObj, 'firstArtObj')
+      // console.log(artData, 'artData'))
+    //   firstArtObj.push(artData.data[0]))
     return firstArtObj.map(art => {
+      console.log(firstArtObj, 'firstArtObj')
       return (
         <ArtistCard
           caption={art.caption}
@@ -65,6 +70,7 @@ const ArtistContainer = props => {
           smImg={art.standard_size_url}
           art={art}
           changeBg={props.changeBg}
+          artistName={artistName}
         />
       )
     })
@@ -72,25 +78,21 @@ const ArtistContainer = props => {
 
   return (
             <>
-              <div className='search-word'>
-                <h5>Your Results </h5>
-                <div className='search-word-input'>
-                  <h3>{foundArtist}</h3>
-                  </div>
-                  <button onClick={refreshPage} className='btn-home '>{element}</button>
+      <div className='search-word'>
+        <h5>Your Results </h5>
+        <div className='search-word-input'>
+          <h3>{artistName}</h3>
+        </div>
+        <button onClick={navigateHome} className='btn-home '>{element}</button>
       </div>
-      {!loading && <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className='my-masonry-grid'
-        columnClassName='my-masonry-grid_column'>
-        {renderCards()}
-      </Masonry>}
-            </>
-
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className='my-masonry-grid'
+          columnClassName='my-masonry-grid_column'>
+          {renderCards()}
+        </Masonry>
+      </>
   )
-
-
-
 }
 
 export default ArtistContainer

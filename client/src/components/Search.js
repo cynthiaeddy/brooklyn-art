@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import SearchResults from './SearchResults'
 import Debounce from '../hooks/Debounce'
 import '../stylesheets/Search.css'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+import SearchResults from './SearchResults'
 
-const Search = props => {
+const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const debouncedSearchTerm = Debounce(searchTerm, 1500)
-  const navigate = useNavigate()
 
 
   return (
@@ -30,9 +29,10 @@ const Search = props => {
       ) : (
           <SearchResults
             term={debouncedSearchTerm}
-            changeBg={props.changeBg}
+            // changeBg={props.changeBg}
             searchTerm={searchTerm}
           />
+
       )}
     </div>
   )
