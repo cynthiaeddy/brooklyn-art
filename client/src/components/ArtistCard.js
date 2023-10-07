@@ -14,34 +14,28 @@ const ArtistCard = props => {
   const bgImage = ''
   const { changeBg } = props
   console.log(from, changeBg, props, 'from in artist card')
-
-
-  useEffect(() => {
-    const term = from
-    axios.get(`api/${term}`).then(response => {
-      setArtist(response.data)
-      setLoading(false)
-    })
-  }, [from])
+  console.log(props,props.caption,'props, in artist card')
   console.log(artist, 'artist in artist card')
 
-  // const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
-  // const name = captionSplit[0]
-  // const justName = captionSplit[0]
-  //   .split(' (')[0]
-  //   .toLowerCase()
-  //   .replace(/\s+/g, '')
-  // const titleName = captionSplit[1].split(',')[0]
-  // const titleYear = captionSplit[1].split(',')[1]
-  // const title = captionSplit[1].split('(')[0].split(',')[0]
+  const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
 
-  // const deleteNameSpace = title.replace(/\s+/g, '')
+  console.log(captionSplit, 'captionSplit')
+  const name = captionSplit[0]
+  const justName = captionSplit[0]
+    .split(' (')[0]
+    .toLowerCase()
+    .replace(/\s+/g, '')
+  const titleName = captionSplit[1].split(',')[0]
+  const titleYear = captionSplit[1].split(',')[1]
+  const title = captionSplit[1].split('(')[0].split(',')[0]
 
-  // useEffect(_ => changeBg(bgImage), [changeBg])
+  const deleteNameSpace = title.replace(/\s+/g, '')
+
+  useEffect(_ => changeBg(bgImage), [changeBg])
   return (
     <>
-      hi
-      {/* <div className='card'>
+
+      <div className='card'>
         <Link
           to={`/${justName}/${deleteNameSpace.toLowerCase()}`}
           state={{ from: props.art }}>
@@ -57,7 +51,7 @@ const ArtistCard = props => {
             <span>{titleYear}</span>
           </h6>
         </Link>
-      </div> */}
+      </div>
     </>
   )
 }

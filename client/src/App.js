@@ -14,6 +14,7 @@ import Navbar from './components/Navbar'
 import ArtCard from './components/ArtCard'
 import Frontis from './components/Frontis'
 import ArtistCard from './components/ArtistCard'
+import ArtistContainer from './components/ArtistContainer'
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
   let routes = (
     <Routes>
       <Route exact path='/' element={<Search changeBg={changeBg} />} />
-      <Route path='/:artist' element={<ArtistCard changeBg={changeBg}/> }/ >
+      <Route path='/:artist' element={<ArtistContainer changeBg={changeBg}/> }/ >
       <Route path='/:artist/:title' element={<ArtCard />} />
       <Route path='*' element={{ Error }} />
     </Routes>

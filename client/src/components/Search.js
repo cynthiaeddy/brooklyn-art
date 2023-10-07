@@ -28,13 +28,11 @@ const Search = props => {
             </div>
           </div>
       ) : (
-          <>
           <SearchResults
             term={debouncedSearchTerm}
             changeBg={props.changeBg}
             searchTerm={searchTerm}
-            />
-            </>
+          />
       )}
     </div>
   )
