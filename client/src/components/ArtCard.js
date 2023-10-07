@@ -1,22 +1,27 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
 import '../stylesheets/Card.css'
 
 const element = <FontAwesomeIcon icon={faHome} />
+const goaway = <FontAwesomeIcon icon={ faCircleArrowLeft } />
 
 const ArtCard = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { from } = location.state
-console.log(from, 'from in art card')
   const cleanCaption = from.caption.replace(/(<([^>]+)>)/gi, '').split('.')
   const titleName = cleanCaption[1].split(',')[0]
   const justName = cleanCaption[0].split(' (')[0]
 
+
   const routeChange = () => {
     navigate('/')
+  }
+  const goBack = () => {
+    navigate(-1)
   }
 
   return (
@@ -34,7 +39,7 @@ console.log(from, 'from in art card')
         <button onClick={routeChange} className='btn-route-change'>
           {element}
         </button>
-        <button onClick={navigate(-1)}>go back</button>
+        <button onClick={goBack} className='btn-route-change'>{goaway}</button>
       </div>
     </div>
   )
