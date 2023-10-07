@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import '../stylesheets/Card.css'
 
 
-const ArtistCard = props => {
+const ArtistCard = ({caption, artistName, art, img}) => {
 
 
 
-  const captionSplit = props.caption.replace(/(<([^>]+)>)/gi, '').split('.')
+  const captionSplit = caption.replace(/(<([^>]+)>)/gi, '').split('.')
 
   const name = captionSplit[0]
 
@@ -16,16 +16,14 @@ const ArtistCard = props => {
 
   const deleteNameSpace = title.replace(/\s+/g, '')
 
-  // useEffect(_ => changeBg(bgImage), [changeBg])
   return (
     <>
-
       <div className='card'>
         <Link
-          to={`/${props.artistName}/${deleteNameSpace.toLowerCase()}`}
-          state={{ from: props.art }}>
+          to={`/${artistName}/${deleteNameSpace.toLowerCase()}`}
+          state={{ from: art }}>
           <img
-            src={`https://${props.img}`}
+            src={`https://${img}`}
             className='small-img'
             alt={titleName}
           />

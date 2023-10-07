@@ -9,17 +9,17 @@ const axios = require('axios')
 
 const element = <FontAwesomeIcon icon={faHome} />
 
-const SearchResults = props => {
+const SearchResults = ({term, searchTerm}) => {
   const [artist, setArtist] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const term = props.term
+
     axios.get(`api/${term}`).then(response => {
       setArtist(response.data)
       setLoading(false)
     })
-  }, [props.term])
+  }, [term])
 
   const refreshPage = () => {
     window.location.reload(false)
@@ -43,12 +43,12 @@ const SearchResults = props => {
               <div className='search-word'>
                 <h5>Your Results </h5>
                 <div className='search-word-input'>
-                  <h3>{props.searchTerm}</h3>
+                  <h3>{searchTerm}</h3>
                   </div>
                   <button onClick={refreshPage} className='btn-home '>{element}</button>
                 </div>
                 <Navigate
-                  to={`/${props.searchTerm}`} state={ [artist, props.searchTerm ]}/>
+                  to={`/${searchTerm}`} state={ [artist, searchTerm ]}/>
             </>
           )}
         </>
