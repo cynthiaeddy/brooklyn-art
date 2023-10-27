@@ -23,4 +23,4 @@ The museum's api initially shows a maxium 12 images. If the query consists of mo
 ## Built with
 • React <br/>
 • Express <br/>
-• Deployed with Heroku
+• Deployed on Heroku
